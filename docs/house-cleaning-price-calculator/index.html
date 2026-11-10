@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House Cleaning Price Calculator: What to Charge per Visit | ClearDayTrackers</title>
+<meta name="description" content="Free house cleaning price calculator. Enter the home's size, your labor, supplies, drive and overhead to get a price per visit that keeps your profit margin.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/house-cleaning-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #1F7A8C; --accent-soft: #E6F3F6;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; House cleaning</p>
+  <h1>How much to charge to clean a house</h1>
+  <div class="rule"></div>
+  <p class="lede">This works out what one visit costs you, then the price that leaves the profit you want. A flat rate per square foot skips your own costs, so a slow house can lose money.</p>
+
+  <form class="calc" data-calc="house-cleaning-price-calculator" novalidate>
+    <fieldset>
+      <legend>The home</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-sqft">Square feet</label>
+          <div class="inbox"><input id="f-sqft" name="sqft" inputmode="decimal" value="2200"><span class="unit">sq ft</span></div>
+        </div>
+        <div class="field">
+          <label for="f-beds">Bedrooms</label>
+          <div class="inbox"><input id="f-beds" name="beds" inputmode="numeric" value="3"></div>
+        </div>
+        <div class="field">
+          <label for="f-baths">Bathrooms</label>
+          <div class="inbox"><input id="f-baths" name="baths" inputmode="decimal" value="2.5"></div>
+          <span class="hint">Half bath = 0.5</span>
+        </div>
+        <div class="field">
+          <label for="f-condition">Condition</label>
+          <div class="inbox"><select id="f-condition" name="condition"><option>Light</option><option selected>Average</option><option>Heavy</option></select></div>
+          <span class="hint">Heavy = pets, clutter, long gap</span>
+        </div>
+        <div class="field">
+          <label for="f-service">Type of clean</label>
+          <div class="inbox"><select id="f-service" name="service"><option selected>Standard clean</option><option>Deep clean</option><option>Move-in or move-out</option></select></div>
+        </div>
+        <div class="field">
+          <label for="f-freq">How often</label>
+          <div class="inbox"><select id="f-freq" name="freq"><option>Weekly</option><option selected>Every 2 weeks</option><option>Monthly</option><option>One-time</option></select></div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your costs and goal</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-pay">Pay per cleaner hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-pay" name="pay" inputmode="decimal" value="22"></div>
+          <span class="hint">What you pay a cleaner, or yourself</span>
+        </div>
+        <div class="field">
+          <label for="f-supplies">Supplies per visit</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-supplies" name="supplies" inputmode="decimal" value="8"></div>
+        </div>
+        <div class="field">
+          <label for="f-miles">Round-trip miles</label>
+          <div class="inbox"><input id="f-miles" name="miles" inputmode="decimal" value="12"><span class="unit">miles</span></div>
+        </div>
+        <div class="field">
+          <label for="f-overhead">Monthly overhead</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-overhead" name="overhead" inputmode="decimal" value="180"></div>
+          <span class="hint">Insurance, phone, software, ads</span>
+        </div>
+        <div class="field">
+          <label for="f-margin">Profit margin you want</label>
+          <div class="inbox"><input id="f-margin" name="margin" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">25-35% is a common goal</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Suggested price per visit</div>
+      <div class="big"><b data-out="price" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Crew hours (all cleaners)</span><b data-out="hours" data-format="hours"></b></li>
+        <li><span>Labor</span><b data-out="labor" data-format="money"></b></li>
+        <li><span>Supplies</span><b data-out="supplies" data-format="money"></b></li>
+        <li><span>Drive</span><b data-out="drive" data-format="money"></b></li>
+        <li><span>Share of overhead</span><b data-out="overhead" data-format="money"></b></li>
+        <li><span>Your cost for the visit</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Profit per visit</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Real margin after rounding</span><b data-out="margin" data-format="pct"></b></li>
+        <li><span>Profit per crew hour</span><b data-out="perhour" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First, time. The page adds 60 minutes for every 1,000 square feet, 10 minutes per bedroom and 25 minutes per bathroom. Then it adjusts for condition (light 0.85, average 1.0, heavy 1.35), the type of clean (deep takes 1.8 times as long, a move-out 2.2 times) and how often the home is booked (weekly homes go faster, one-time cleans run long).</p>
+    <p>Second, cost. Labor is the crew hours times your hourly pay, plus 12% for payroll extras. Add supplies, the drive at 70 cents a mile, and your monthly overhead shared over 12 visits a month.</p>
+    <p>Third, price. The cost is divided by one minus your margin, then rounded up to the next $5. At a 25% margin, a visit that costs $100 is priced at $135, not $125. These are the same steps and defaults the kit uses. The extras, car cost and visits per month are held at the kit's defaults. The time rates are rough starting points, so time a few of your own jobs.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Rough rates of $0.05 to $0.15 per square foot ignore the home's condition and your own costs.</li>
+      <li>Hourly quotes forget payroll extras, the drive and overhead.</li>
+      <li>Margin is not markup. Adding 25% to your cost leaves you with only 20% of the price.</li>
+      <li>Most calculators stop at a price. This one also shows your profit per crew hour, so you can tell a good client from a slow one.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Cleaning Business Pricing &amp; Profit Kit is an Excel workbook (.xlsx). It adds add-ons like ovens and fridges, a printable price sheet, profit per client, monthly income and who owes what, plus scripts for raising your rate. It is a tool for your own numbers; it does not promise any result.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4606702611">See the Cleaning Pricing &amp; Profit Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611075202">the cleaning bundle</a> with more tools for the business.</p>
+  </aside>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/house-cleaning-price-calculator.js"></script>
+</body>
+</html>

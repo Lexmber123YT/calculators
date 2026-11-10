@@ -1,0 +1,113 @@
+/* ClearDayTrackers free calculators. One stylesheet for every page.
+   Each calculator page sets its own --accent and --accent-soft on <body> (its niche color). */
+:root {
+  --paper: #fbf7ef;
+  --card: #ffffff;
+  --ink: #1d2733;
+  --ink-soft: #4a5562;
+  --line: #e4dccd;
+  --gold: #b08d57;
+  --accent: #1f7a8c;
+  --accent-soft: #e6f2f4;
+  --warn: #b3412f;
+  --warn-soft: #fbeae6;
+  --good: #3f7a3a;
+  --radius: 10px;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 var(--sans);
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+img { max-width: 100%; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* top bar */
+.top { border-bottom: 1px solid var(--line); background: var(--paper); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+.brand { font: 700 18px/1.2 var(--serif); color: var(--ink); text-decoration: none; letter-spacing: .2px; }
+.brand span { color: var(--gold); }
+.top nav a { font-size: 15px; color: var(--ink-soft); text-decoration: none; }
+.top nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* page head */
+.crumbs { font-size: 14px; color: var(--ink-soft); margin: 20px 0 4px; }
+.crumbs a { color: var(--ink-soft); }
+h1 { font: 700 30px/1.2 var(--serif); margin: 6px 0 10px; }
+h2 { font: 700 22px/1.25 var(--serif); margin: 32px 0 10px; }
+h3 { font: 700 18px/1.3 var(--serif); margin: 22px 0 6px; }
+.lede { font-size: 18px; color: var(--ink-soft); margin: 0 0 20px; }
+.rule { height: 3px; width: 56px; background: var(--accent); border-radius: 2px; margin: 0 0 18px; }
+
+/* calculator card */
+.calc { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: var(--radius); padding: 18px 18px 8px; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.calc fieldset { border: 0; margin: 0 0 10px; padding: 0; }
+.calc legend { font: 700 15px/1.3 var(--sans); text-transform: uppercase; letter-spacing: .6px; color: var(--ink-soft); margin-bottom: 8px; padding: 0; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.field label { font-weight: 600; font-size: 15px; }
+.field .hint { font-size: 13px; color: var(--ink-soft); }
+.inbox { display: flex; align-items: stretch; border: 1px solid #cfc6b5; border-radius: 8px; background: #fff; overflow: hidden; }
+.inbox:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.inbox .unit { padding: 0 10px; display: flex; align-items: center; background: #f5f1e8; color: var(--ink-soft); font-size: 15px; white-space: nowrap; }
+.inbox input, .inbox select { flex: 1; min-width: 0; border: 0; padding: 10px 10px; font: 17px var(--sans); color: var(--ink); background: transparent; }
+.inbox input:focus, .inbox select:focus { outline: none; }
+.field.bad .inbox { border-color: var(--warn); }
+.btnrow { margin: 14px 0 12px; }
+button.go { font: 700 17px var(--sans); color: #fff; background: var(--accent); border: 0; border-radius: 8px; padding: 12px 20px; cursor: pointer; }
+button.go:hover { filter: brightness(.94); }
+.calc-msg { display: none; margin: 4px 0 14px; padding: 10px 12px; border-radius: 8px; background: var(--warn-soft); color: var(--warn); font-size: 15px; }
+.calc-msg.show { display: block; }
+
+/* results */
+.results { display: none; margin: 4px 0 12px; padding: 14px; border-radius: 8px; background: var(--accent-soft); }
+.results.show { display: block; }
+.big { font: 700 34px/1.1 var(--serif); margin: 2px 0 4px; }
+.big-label { font-size: 14px; text-transform: uppercase; letter-spacing: .6px; color: var(--ink-soft); }
+.rows { margin: 12px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(0,0,0,.08); }
+.rows li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 16px; }
+.rows li b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.flag { margin: 10px 0 0; font-size: 15px; }
+.flag.warn { color: var(--warn); }
+.flag.good { color: var(--good); }
+
+/* kit box */
+.kit { margin: 28px 0; padding: 18px; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); background: #fffdf8; }
+.kit h2 { margin-top: 0; font-size: 20px; }
+.kit p { margin: 6px 0; }
+.kit .cta { display: inline-block; margin-top: 8px; font-weight: 700; text-decoration: none; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; }
+.kit .cta:hover { background: #000; }
+.kit .also { font-size: 15px; color: var(--ink-soft); }
+
+/* prose */
+.prose p, .prose li { max-width: 68ch; }
+.prose ul, .prose ol { padding-left: 22px; }
+.note { font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 12px; margin-top: 28px; }
+.taxline { font-size: 14px; color: var(--ink-soft); background: #f5f1e8; padding: 10px 12px; border-radius: 8px; }
+
+/* home page list */
+.trades { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 8px; padding: 0; list-style: none; }
+.trades li { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--c, var(--accent)); border-radius: var(--radius); padding: 14px 16px; }
+.trades .trade { font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--ink-soft); }
+.trades a { display: block; font: 700 18px/1.3 var(--serif); color: var(--ink); text-decoration: none; margin: 2px 0 4px; }
+.trades a:hover { text-decoration: underline; }
+.trades p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+footer { margin-top: 40px; border-top: 1px solid var(--line); padding: 18px 0 28px; font-size: 14px; color: var(--ink-soft); }
+footer a { color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  h1 { font-size: 26px; }
+  .grid, .trades { grid-template-columns: 1fr; }
+  .big { font-size: 30px; }
+  .top nav { display: none; }
+}

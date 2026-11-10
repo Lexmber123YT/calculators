@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutoring Package Price Calculator: Price Lesson Packages That Pay | ClearDayTrackers</title>
+<meta name="description" content="Free tutoring package price calculator. See the per-lesson price after a package discount, what you really earn per hour with prep and travel, and if it still pays.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/tutoring-package-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #355C7D; --accent-soft: #E8EEF4;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Tutoring</p>
+  <h1>How to price tutoring packages (and what they really pay)</h1>
+  <div class="rule"></div>
+  <p class="lede">Type your lesson price, the unpaid minutes around each lesson and a package discount. You get the package price, the price per lesson, and what you really earn for every hour of work. A discount that looks small can push you under your goal.</p>
+
+  <form class="calc" data-calc="tutoring-package-price-calculator" novalidate>
+    <fieldset>
+      <legend>One lesson</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-price">Single-lesson price</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-price" name="price" inputmode="decimal" value="60"></div>
+          <span class="hint">What one lesson costs with no package</span>
+        </div>
+        <div class="field">
+          <label for="f-length">Lesson length</label>
+          <div class="inbox"><input id="f-length" name="length" inputmode="decimal" value="60"><span class="unit">min</span></div>
+          <span class="hint">Time with the student</span>
+        </div>
+        <div class="field">
+          <label for="f-prep">Prep per lesson</label>
+          <div class="inbox"><input id="f-prep" name="prep" inputmode="decimal" value="10"><span class="unit">min</span></div>
+          <span class="hint">Planning, worksheets, checking homework</span>
+        </div>
+        <div class="field">
+          <label for="f-travel">Travel per lesson</label>
+          <div class="inbox"><input id="f-travel" name="travel" inputmode="decimal" value="20"><span class="unit">min</span></div>
+          <span class="hint">There and back. 0 if online</span>
+        </div>
+        <div class="field">
+          <label for="f-admin">Messages and notes</label>
+          <div class="inbox"><input id="f-admin" name="admin" inputmode="decimal" value="10"><span class="unit">min</span></div>
+          <span class="hint">Texts with parents, scheduling, notes</span>
+        </div>
+        <div class="field">
+          <label for="f-tcost">Travel cost per lesson</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-tcost" name="tcost" inputmode="decimal" value="3.50"></div>
+          <span class="hint">Gas, parking, tolls</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Fees, tax and your goal</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-fee">Card or platform fees</label>
+          <div class="inbox"><input id="f-fee" name="fee" inputmode="decimal" value="3"><span class="unit">%</span></div>
+          <span class="hint">Card readers about 3%</span>
+        </div>
+        <div class="field">
+          <label for="f-tax">Tax set-aside</label>
+          <div class="inbox"><input id="f-tax" name="tax" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">25-30% is a common rule of thumb</span>
+        </div>
+        <div class="field">
+          <label for="f-goal">Take-home goal per hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-goal" name="goal" inputmode="decimal" value="25"><span class="unit">/hr</span></div>
+          <span class="hint">After costs and tax, per hour of work</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>The package</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-packn">Lessons in the package</label>
+          <div class="inbox"><input id="f-packn" name="packn" inputmode="numeric" value="10"></div>
+          <span class="hint">2 or more</span>
+        </div>
+        <div class="field">
+          <label for="f-disc">Package discount</label>
+          <div class="inbox"><input id="f-disc" name="disc" inputmode="decimal" value="10"><span class="unit">%</span></div>
+          <span class="hint">Off the single-lesson price</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Package price (rounded to the nearest $5)</div>
+      <div class="big"><b data-out="packprice" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Price per lesson in the package</span><b data-out="packper" data-format="money"></b></li>
+        <li><span>The family saves</span><b data-out="packsave" data-format="money0"></b></li>
+        <li><span>Package pays you per hour of work</span><b data-out="packpay" data-format="money"></b></li>
+        <li><span>Package check</span><b data-out="packcheck" data-format="text"></b></li>
+        <li><span>Hours one lesson really takes</span><b data-out="hours" data-format="hours"></b></li>
+        <li><span>You charge per hour of lesson</span><b data-out="charge" data-format="money"></b></li>
+        <li><span>Fees and costs per lesson</span><b data-out="costs" data-format="money"></b></li>
+        <li><span>Tax set-aside per lesson</span><b data-out="taxamt" data-format="money"></b></li>
+        <li><span>Take-home per single lesson</span><b data-out="takehome" data-format="money"></b></li>
+        <li><span>Single lesson pays you per hour of work</span><b data-out="realhr" data-format="money"></b></li>
+        <li><span>Single price that reaches your goal</span><b data-out="needed" data-format="money"></b></li>
+        <li><span>Rounded up to the next $5</span><b data-out="suggested" data-format="money0"></b></li>
+        <li><span>Single-lesson check</span><b data-out="check" data-format="text"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>One lesson takes more than the lesson. Add the minutes for prep, travel and messages to get the hours it really takes. From the price, take off card or platform fees, travel cost and a share of your monthly business costs. Then take off your tax set-aside. What is left, divided by the real hours, is what you earn for an hour of work.</p>
+    <p>The goal price works backward from the take-home you want per hour. The package price is your single price times the lessons, less the discount, rounded to the nearest $5. The page then runs the same pay-per-hour check on the per-lesson price inside the package.</p>
+    <p>Two things are held at example values: monthly business costs of $90 spread over 26 lessons a month, and package prices rounded to the nearest $5. The kit lets you change both.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>They show the family&rsquo;s savings, not your pay. A 10% discount is $6 off a $60 lesson, but it comes out of the money left after costs, so it cuts your pay by more than 10%.</li>
+      <li>They count the lesson hour and nothing else. Prep, drive time and parent messages are real hours you do not bill.</li>
+      <li>They skip fees and tax. A platform that keeps a large cut changes the answer a lot; so does a tax set-aside.</li>
+      <li>They never check the pack against a goal. The per-lesson price falls with each bigger pack, so the longest pack usually pays the least per hour.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Tutor Lesson Package &amp; Pricing Kit is an Excel workbook (.xlsx). It does this math for two kinds of lessons and a whole package menu, then tracks each family&rsquo;s prepaid lessons, what is left, and who is due to renew. It also has a printable package menu and terms, and parent messages.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4608095072">See the Tutor Lesson Package &amp; Pricing Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4608303379">the tutor business bundle</a>, with the prepaid tracker and cancellation tools.</p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/tutoring-package-price-calculator.js"></script>
+</body>
+</html>

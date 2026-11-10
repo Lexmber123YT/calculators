@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booth Rent Break-Even Calculator: How Many Clients to Cover Your Rent | ClearDayTrackers</title>
+<meta name="description" content="Free booth rent calculator for hair stylists. See how many services a week cover your rent and costs, and how many reach your take-home goal.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/booth-rent-break-even-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #7A3E65; --accent-soft: #F4E9F0;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Hair stylists and booth renters</p>
+  <h1>How many clients do you need to cover your booth rent?</h1>
+  <div class="rule"></div>
+  <p class="lede">Rent divided by your price is the quick answer, and it is too low. This works out how many services a week cover your rent <em>and</em> your other costs, product and card fees, then how many reach the take-home you want.</p>
+
+  <form class="calc" data-calc="booth-rent-break-even-calculator" novalidate>
+    <fieldset>
+      <legend>Your chair costs</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-rent">Booth rent per week</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-rent" name="rent" inputmode="decimal" value="250"></div>
+          <span class="hint">Pay monthly? Divide by 4.33.</span>
+        </div>
+        <div class="field">
+          <label for="f-other">Other costs per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-other" name="other" inputmode="decimal" value="190"></div>
+          <span class="hint">Insurance, booking app, license, classes, phone.</span>
+        </div>
+        <div class="field">
+          <label for="f-hours">Chair hours per week</label>
+          <div class="inbox"><input id="f-hours" name="hours" inputmode="decimal" value="32"><span class="unit">hrs</span></div>
+          <span class="hint">Hours you hold the chair for clients.</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>One average service</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-ticket">Average price</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-ticket" name="ticket" inputmode="decimal" value="90"></div>
+          <span class="hint">Before tips.</span>
+        </div>
+        <div class="field">
+          <label for="f-product">Product cost</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-product" name="product" inputmode="decimal" value="8"></div>
+          <span class="hint">Color, developer, supplies used.</span>
+        </div>
+        <div class="field">
+          <label for="f-minutes">Minutes in the chair</label>
+          <div class="inbox"><input id="f-minutes" name="minutes" inputmode="decimal" value="60"><span class="unit">min</span></div>
+          <span class="hint">Processing time counts.</span>
+        </div>
+        <div class="field">
+          <label for="f-fee">Card fee</label>
+          <div class="inbox"><input id="f-fee" name="fee" inputmode="decimal" value="2.9"><span class="unit">%</span></div>
+          <span class="hint">2.6% to 3.5% is common.</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your goal</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-goal">Take-home goal per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-goal" name="goal" inputmode="decimal" value="3000"></div>
+          <span class="hint">What you want to keep after tax.</span>
+        </div>
+        <div class="field">
+          <label for="f-tax">Set aside for taxes</label>
+          <div class="inbox"><input id="f-tax" name="tax" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">25% to 30% is a common start.</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Services per week to cover rent and costs</div>
+      <div class="big"><b data-out="be_week" data-format="num"></b></div>
+      <ul class="rows">
+        <li><span>Services per month to cover them</span><b data-out="be_month" data-format="num"></b></li>
+        <li><span>Services per week for your goal</span><b data-out="goal_week" data-format="num"></b></li>
+        <li><span>Chair hours that takes</span><b data-out="goal_hours" data-format="hours"></b></li>
+        <li><span>Fixed costs per week</span><b data-out="fixed" data-format="money"></b></li>
+        <li><span>Left per service after product and fees</span><b data-out="left" data-format="money"></b></li>
+        <li><span>Rent and costs per chair hour</span><b data-out="fixed_hr" data-format="money"></b></li>
+        <li><span>Pay per hour with a client, after rent and costs</span><b data-out="hourly" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Your fixed costs per week are the rent plus your other monthly costs divided by 4.33 (the weeks in an average month). Each service leaves the price, minus its product cost, minus the card fee. Break-even is the fixed costs divided by what one service leaves, rounded up to a whole service.</p>
+    <p>For your goal, the page adds the monthly take-home you want, grossed up so the tax set-aside is covered, then divides by what one service leaves. The chair hours are that service count times the minutes per service. The last line is what one hour with a client leaves after product and fees, minus the rent and costs spread over your chair hours. Empty chair hours pay nothing, so your real hourly pay is lower until the chair is full.</p>
+    <p>Held at the kit's defaults: card fees are counted as if every client pays by card (a safe guess), and tips and retail sales are left out.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Rent divided by price ignores product, card fees and your other monthly bills. They are due whether you are booked or not.</li>
+      <li>Most stop at break-even. Break-even is the floor, where you work for free. The goal number is the one to plan around.</li>
+      <li>Few set tax aside before your take-home, so the goal comes out too low.</li>
+      <li>A client count means little if it does not fit your chair hours. The hours line tells you if it does.</li>
+      <li>A higher average price cuts the clients you need faster than a lower rent does. Try a $10 raise in the price box and compare.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Booth Renter Profit &amp; Client Kit is an Excel workbook (.xlsx). It works from your real bookings: break-even that updates each week, hourly pay for every service on your menu, a price that hits your hourly goal, what no-shows cost you, a client list that shows who is due back or drifting, and a tax set-aside tracker. It does not promise results; it shows your own numbers.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4607235999">See the Booth Renter Profit &amp; Client Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611074059">the Booth Renter Tax Set-Aside, Mileage &amp; Write-Off Kit</a> for tracking what to set aside and what you can write off.</p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/booth-rent-break-even-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Daycare Rate Calculator: How Much to Charge per Week | ClearDayTrackers</title>
+<meta name="description" content="Free home daycare rate calculator. Start from the pay you want and your monthly costs to find a weekly rate for infants, toddlers, preschoolers and school-age kids.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/home-daycare-rate-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #BF3F18; --accent-soft: #FBEAE4;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Home daycare</p>
+  <h1>How much to charge for home daycare</h1>
+  <div class="rule"></div>
+  <p class="lede">Most rate guides tell parents what daycare costs. This starts from your side: the pay you want, your monthly costs and how full you really are, then works out a weekly rate for each age group.</p>
+
+  <form class="calc" data-calc="home-daycare-rate-calculator" novalidate>
+    <fieldset>
+      <legend>Your pay and costs</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-takehome">Take-home pay per year</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-takehome" name="takehome" inputmode="decimal" value="60000"></div>
+          <span class="hint">What you want to keep, before income tax</span>
+        </div>
+        <div class="field">
+          <label for="f-helper">Helper pay per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-helper" name="helper" inputmode="decimal" value="2100"></div>
+          <span class="hint">0 if it's only you</span>
+        </div>
+        <div class="field">
+          <label for="f-food">Food per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-food" name="food" inputmode="decimal" value="650"></div>
+          <span class="hint">After any food program money</span>
+        </div>
+        <div class="field">
+          <label for="f-other">All other costs per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-other" name="other" inputmode="decimal" value="850"></div>
+          <span class="hint">Supplies, insurance, license, home share, phone</span>
+        </div>
+        <div class="field">
+          <label for="f-weeks">Weeks you bill per year</label>
+          <div class="inbox"><input id="f-weeks" name="weeks" inputmode="decimal" value="52"><span class="unit">weeks</span></div>
+          <span class="hint">52 if holidays and vacation are paid</span>
+        </div>
+        <div class="field">
+          <label for="f-fill">Average fullness</label>
+          <div class="inbox"><input id="f-fill" name="fill" inputmode="decimal" value="90"><span class="unit">%</span></div>
+          <span class="hint">Nobody is full all year</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your spots (within your license)</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-infant">Infant slots</label>
+          <div class="inbox"><input id="f-infant" name="infant" inputmode="numeric" value="2"></div>
+        </div>
+        <div class="field">
+          <label for="f-toddler">Toddler slots</label>
+          <div class="inbox"><input id="f-toddler" name="toddler" inputmode="numeric" value="3"></div>
+        </div>
+        <div class="field">
+          <label for="f-pre">Preschool slots</label>
+          <div class="inbox"><input id="f-pre" name="pre" inputmode="numeric" value="3"></div>
+        </div>
+        <div class="field">
+          <label for="f-school">School-age slots</label>
+          <div class="inbox"><input id="f-school" name="school" inputmode="numeric" value="2"></div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Preschool rate per child, per week</div>
+      <div class="big"><b data-out="pre" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>All children together, per week</span><b data-out="week" data-format="money"></b></li>
+        <li><span>Monthly costs</span><b data-out="monthly" data-format="money0"></b></li>
+        <li><span>You need per year</span><b data-out="year" data-format="money0"></b></li>
+        <li><span>You need per month</span><b data-out="month" data-format="money0"></b></li>
+        <li><span>Infant, per week</span><b data-out="infant" data-format="money0"></b></li>
+        <li><span>Toddler, per week</span><b data-out="toddler" data-format="money0"></b></li>
+        <li><span>School-age, per week</span><b data-out="school" data-format="money0"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Your pay goal plus twelve months of costs is what you need to bring in each year. Divide that by the weeks you bill and you get the weekly need.</p>
+    <p>Each spot carries a care weight, because babies need more hands: infant 1.25, toddler 1.10, preschool 1.00, school-age 0.60. The weekly need is shared across your spots by weight, at the fullness you plan for. That gives a rate per age group, rounded up to the next $5. These weights are the kit's defaults.</p>
+    <p>Rates are for a full-time week. The kit also covers part-time and drop-in, and sets your current rates against what you need. This page ignores any current rate, so it shows what you need from scratch.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Parent-side guides show rough local ranges. They don't know what you need to earn.</li>
+      <li>Planning at 100% full is the most common mistake. One open spot for months can erase a raise.</li>
+      <li>Your own take-home pay is a cost. Leaving it out is how a full house can still pay too little.</li>
+      <li>Weeks off with no pay are covered here by billing 52 weeks. Change it if you charge less.</li>
+      <li>Check the answer against your state's child care market rate survey. A rate far above the local market needs a reason families can see.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Home Daycare Business &amp; Tuition Kit is an Excel workbook (.xlsx). It adds rate cards by schedule, weekly billing for each family, late-payment and late-pickup fees from your own policy, subsidy tracking, a waitlist and a handbook. It helps you run the numbers; it does not promise any result.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4606725224">See the Home Daycare Business &amp; Tuition Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611056819">the home daycare bundle</a>.</p>
+  </aside>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/home-daycare-rate-calculator.js"></script>
+</body>
+</html>

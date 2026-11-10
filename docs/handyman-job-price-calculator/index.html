@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handyman Job Price Calculator: What to Charge for a Small Job | ClearDayTrackers</title>
+<meta name="description" content="Free handyman price calculator. Work out what to charge for a small job: labor at the rate you need, trip charge, materials markup and a job minimum, plus what it pays per hour.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/handyman-job-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #B5452B; --accent-soft: #f9ebe6;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Handyman</p>
+  <h1>How much should I charge for a small handyman job?</h1>
+  <div class="rule"></div>
+  <p class="lede">Most small jobs lose money because they are priced by the hour on site. The drive, the setup, the supply run and the truck and insurance bills are not on the clock. This works the price backward from the pay you want.</p>
+
+  <form class="calc" data-calc="handyman-job-price-calculator" novalidate>
+    <fieldset>
+      <legend>Your year</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-takehome">Take-home pay you want</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-takehome" name="takehome" inputmode="decimal" value="52000"></div>
+          <span class="hint">A year, after tax and business costs</span>
+        </div>
+        <div class="field">
+          <label for="f-hours">Job hours a week</label>
+          <div class="inbox"><input id="f-hours" name="hours" inputmode="decimal" value="26"><span class="unit">hrs</span></div>
+          <span class="hint">On site, driving, supply runs. Not office time</span>
+        </div>
+        <div class="field">
+          <label for="f-costs">Yearly business costs</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-costs" name="costs" inputmode="decimal" value="15200"></div>
+          <span class="hint">Truck, tools, insurance, phone, supplies</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>The job</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-task_hours">Hours on site</label>
+          <div class="inbox"><input id="f-task_hours" name="task_hours" inputmode="decimal" value="2"><span class="unit">hrs</span></div>
+          <span class="hint">Just the work itself</span>
+        </div>
+        <div class="field">
+          <label for="f-materials">Materials at your cost</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-materials" name="materials" inputmode="decimal" value="40"></div>
+          <span class="hint">What you pay, 0 if the customer supplies</span>
+        </div>
+        <div class="field">
+          <label for="f-markup">Markup on materials</label>
+          <div class="inbox"><input id="f-markup" name="markup" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">Many use 15 to 30</span>
+        </div>
+        <div class="field">
+          <label for="f-drive">Round-trip drive</label>
+          <div class="inbox"><input id="f-drive" name="drive" inputmode="decimal" value="40"><span class="unit">min</span></div>
+          <span class="hint">There and back</span>
+        </div>
+        <div class="field">
+          <label for="f-trip">Trip charge</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-trip" name="trip" inputmode="decimal" value="50"></div>
+          <span class="hint">0 if you don't charge one</span>
+        </div>
+        <div class="field">
+          <label for="f-runs">Supply runs</label>
+          <div class="inbox"><input id="f-runs" name="runs" inputmode="numeric" value="1"><span class="unit">runs</span></div>
+          <span class="hint">Extra trips to the store for parts</span>
+        </div>
+        <div class="field">
+          <label for="f-minimum">Your job minimum</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-minimum" name="minimum" inputmode="decimal" value="125"></div>
+          <span class="hint">No visit goes out for less</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Price to quote (rounded up to $5)</div>
+      <div class="big"><b data-out="suggested" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Hourly rate you need</span><b data-out="rate" data-format="money0"></b></li>
+        <li><span>Labor, on-site hours plus setup</span><b data-out="labor" data-format="money"></b></li>
+        <li><span>Trip charge</span><b data-out="trip" data-format="money"></b></li>
+        <li><span>Materials at cost</span><b data-out="mat" data-format="money"></b></li>
+        <li><span>Markup on materials</span><b data-out="markup" data-format="money"></b></li>
+        <li><span>Supply run charges</span><b data-out="runs_chg" data-format="money"></b></li>
+        <li><span>Subtotal before the minimum</span><b data-out="subtotal" data-format="money"></b></li>
+        <li><span>Minimum check</span><b data-out="min_check" data-format="text"></b></li>
+        <li><span>Hours the visit takes you</span><b data-out="hours" data-format="num1"></b></li>
+        <li><span>Pays you per hour</span><b data-out="per_hr" data-format="money"></b></li>
+        <li><span>Hours-only pricing would pay per real hour</span><b data-out="hours_only" data-format="money"></b></li>
+        <li><span>Break-even rate per hour</span><b data-out="breakeven" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First it finds your hourly rate. Your take-home pay is grossed up for a 25% tax set-aside, your yearly business costs are added, and the total is spread over the job hours you work (48 weeks a year). That is the rate you need, rounded up to the next $5.</p>
+    <p>Then it prices the visit. Labor is your on-site hours plus 20 minutes of setup and cleanup, at that rate. On top go the trip charge, your materials at cost, your markup on them, and $35 for each supply run. If the total is under your job minimum, the minimum wins. The price is rounded up to the next $5.</p>
+    <p>Last, a profit check. It counts every hour the visit takes: on site, setup, the drive, and 30 minutes for each supply run. Then it divides what is left after materials by those hours. Held at the kit's usual numbers and not on the form: 48 weeks, 25% tax set-aside, 20 minutes setup, 30 minutes and $35 per supply run, and no dump fees.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most guides quote a rough hourly range and stop. Your own rate depends on the pay you want and what your truck, tools and insurance cost, not on a town average.</li>
+      <li>Setup, cleanup, the drive and supply runs are hours you work. Pricing only the hours on site is why a quick fix can pay half what you thought.</li>
+      <li>Trip charges, markup and minimums are often shown as separate tips. Here they sit in one price, and the minimum is checked last, so a small job never goes out under it.</li>
+      <li>A price can be fine and still miss your goal. The last lines show what the visit pays per real hour so you can see it.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page prices one job. The Handyman Small-Job Pricing &amp; Profit Kit is an Excel workbook (.xlsx). It prices whole honey-do lists, tests a price you type in, holds a menu of common small jobs and prints a price sheet for customers. You can also change every number held here.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4607449866">See the Handyman Small-Job Pricing &amp; Profit Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4608002651">the handyman bundle</a>.</p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/handyman-job-price-calculator.js"></script>
+</body>
+</html>

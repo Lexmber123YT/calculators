@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lexmber123yt.github.io/calculators/sitemap.xml

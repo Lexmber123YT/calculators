@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photographer Hourly Rate Calculator: What a Session Really Pays | ClearDayTrackers</title>
+<meta name="description" content="Free photographer hourly rate calculator. Count every hour from the first email to the delivered gallery and see what a session really pays per hour.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/photographer-hourly-rate-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #3A3A3A; --accent-soft: #F6EDE3;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Photography</p>
+  <h1>What does a photography session really pay per hour?</h1>
+  <div class="rule"></div>
+  <p class="lede">A session fee divided by the hours on the shoot looks fine. Count the emails, the drive, the culling, the editing and the gallery delivery too, and the real rate is often much lower. Type your own hours to see yours.</p>
+
+  <form class="calc" data-calc="photographer-hourly-rate-calculator" novalidate>
+    <fieldset>
+      <legend>The session</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-fee">Session fee</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-fee" name="fee" inputmode="decimal" value="375"></div>
+          <span class="hint">What the client pays</span>
+        </div>
+        <div class="field">
+          <label for="f-target">Hourly rate you want</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-target" name="target" inputmode="decimal" value="50"><span class="unit">/hr</span></div>
+          <span class="hint">For every hour it takes</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Every hour it takes</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-emails">Emails and planning</label>
+          <div class="inbox"><input id="f-emails" name="emails" inputmode="decimal" value="1"><span class="unit">hrs</span></div>
+          <span class="hint">Inquiry, booking, outfit help</span>
+        </div>
+        <div class="field">
+          <label for="f-travel">Travel</label>
+          <div class="inbox"><input id="f-travel" name="travel" inputmode="decimal" value="0.75"><span class="unit">hrs</span></div>
+          <span class="hint">There and back. 0 in a studio</span>
+        </div>
+        <div class="field">
+          <label for="f-shoot">Shooting</label>
+          <div class="inbox"><input id="f-shoot" name="shoot" inputmode="decimal" value="1.25"><span class="unit">hrs</span></div>
+          <span class="hint">Set-up and pack-up count</span>
+        </div>
+        <div class="field">
+          <label for="f-delivery">Gallery delivery</label>
+          <div class="inbox"><input id="f-delivery" name="delivery" inputmode="decimal" value="0.5"><span class="unit">hrs</span></div>
+          <span class="hint">Upload, sneak peeks, questions</span>
+        </div>
+        <div class="field">
+          <label for="f-edit">Culling and editing</label>
+          <div class="inbox"><input id="f-edit" name="edit" inputmode="decimal" value="4.4"><span class="unit">hrs</span></div>
+          <span class="hint">Often the biggest block</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Costs</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-miles">Miles driven</label>
+          <div class="inbox"><input id="f-miles" name="miles" inputmode="decimal" value="24"><span class="unit">mi</span></div>
+          <span class="hint">There and back</span>
+        </div>
+        <div class="field">
+          <label for="f-other">Other costs</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-other" name="other" inputmode="decimal" value="12"></div>
+          <span class="hint">Prints, helper, location, gallery</span>
+        </div>
+        <div class="field">
+          <label for="f-overhead">Yearly costs, per session</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-overhead" name="overhead" inputmode="decimal" value="54"></div>
+          <span class="hint">Gear, software, insurance for a year, divided by your sessions a year</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Your real hourly rate for this session</div>
+      <div class="big"><b data-out="realhr" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>Total hours one session takes</span><b data-out="hours" data-format="hours"></b></li>
+        <li><span>Mileage cost</span><b data-out="milecost" data-format="money"></b></li>
+        <li><span>Card and payment fees</span><b data-out="card" data-format="money"></b></li>
+        <li><span>Direct costs for the session</span><b data-out="direct" data-format="money"></b></li>
+        <li><span>Check against your rate</span><b data-out="check" data-format="text"></b></li>
+        <li><span>Tax to set aside</span><b data-out="taxamt" data-format="money"></b></li>
+        <li><span>Take-home from the session</span><b data-out="takehome" data-format="money"></b></li>
+        <li><span>Take-home per hour of work</span><b data-out="takehr" data-format="money"></b></li>
+        <li><span>Fee that reaches your rate</span><b data-out="feeneed" data-format="money0"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Add every hour: emails and planning, travel, shooting, gallery delivery, and culling and editing. Take the session fee and subtract the direct costs: mileage, any prints or helper or location fee, and card fees. Divide what is left by all those hours. That is your real hourly rate.</p>
+    <p>For take-home, the page also takes off your share of yearly business costs and a tax set-aside, then divides by the same hours. The fee that reaches your rate is worked backward from the hours and direct costs.</p>
+    <p>Three things are held at example values: card fees of 3%, driving at 70 cents a mile, and a rough 28% tax set-aside. In the kit you can change all three, and it can replace your editing guess with your own average once you have logged a few galleries.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>They divide by shoot time, or shoot plus editing. Inquiry emails, planning, drive time and gallery delivery are real hours too.</li>
+      <li>They guess the editing time. Your own record of past galleries is more honest than a round number.</li>
+      <li>They ignore direct costs. A 3% card fee and 24 miles of driving come out before you are paid.</li>
+      <li>They stop at the fee. Gear, software and insurance are costs of every session, and tax comes out of what is left.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Photographer Pricing &amp; Real Hourly Rate Kit is an Excel workbook (.xlsx). It checks up to six session types side by side, logs your real editing time per gallery, and works out the fees you need to reach a yearly take-home goal. It also has a package designer, a printable client price guide and price-change letters.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4608778989">See the Photographer Pricing &amp; Real Hourly Rate Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4608818605">the photographer business bundle</a>, with two more photographer kits.</p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/photographer-hourly-rate-calculator.js"></script>
+</body>
+</html>

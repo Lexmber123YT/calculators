@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lawn Mowing Price Calculator: What to Charge per Visit | ClearDayTrackers</title>
+<meta name="description" content="How much to charge to mow a lawn? Enter yard size, obstacles, drive time, pay, overhead and profit to get a price per visit that covers your true cost.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/lawn-mowing-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #4F772D; --accent-soft: #EAF2E1;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Lawn care</p>
+  <h1>How much to charge to mow a lawn</h1>
+  <div class="rule"></div>
+  <p class="lede">Price one yard from its size, the mower, the obstacles and the drive. You get the true cost of the visit and a price that clears your profit goal. A flat rate per hour leaves out the drive and the overhead.</p>
+
+  <form class="calc" data-calc="lawn-mowing-price-calculator" novalidate>
+    <fieldset>
+      <legend>The yard</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-sqft">Lawn size</label>
+          <div class="inbox"><input id="f-sqft" name="sqft" inputmode="decimal" value="21000"><span class="unit">sq ft</span></div>
+          <span class="hint">Just the part you mow. 1 acre = 43,560</span>
+        </div>
+        <div class="field">
+          <label for="f-mower">Mower</label>
+          <div class="inbox"><select id="f-mower" name="mower">
+            <option>21-inch push mower</option>
+            <option selected>36-inch walk-behind</option>
+            <option>48-inch stand-on</option>
+            <option>52-inch zero-turn</option>
+            <option>60-inch zero-turn</option>
+            <option>72-inch zero-turn</option>
+          </select></div>
+          <span class="hint">Sets how fast you cover open grass</span>
+        </div>
+        <div class="field">
+          <label for="f-obstacles">Obstacles</label>
+          <div class="inbox"><select id="f-obstacles" name="obstacles">
+            <option>Open lawn</option>
+            <option selected>Some beds and trees</option>
+            <option>Lots to mow around</option>
+          </select></div>
+          <span class="hint">Beds, trees, play sets</span>
+        </div>
+        <div class="field">
+          <label for="f-slope">Slope</label>
+          <div class="inbox"><select id="f-slope" name="slope">
+            <option>Flat</option>
+            <option selected>Rolling</option>
+            <option>Steep hill</option>
+          </select></div>
+          <span class="hint">Hills slow the mower</span>
+        </div>
+        <div class="field">
+          <label for="f-otherMin">Trim, edge and blow</label>
+          <div class="inbox"><input id="f-otherMin" name="otherMin" inputmode="decimal" value="25"><span class="unit">minutes</span></div>
+          <span class="hint">Total labor minutes for all three</span>
+        </div>
+        <div class="field">
+          <label for="f-drive">Drive time to the yard</label>
+          <div class="inbox"><input id="f-drive" name="drive" inputmode="decimal" value="15"><span class="unit">minutes</span></div>
+          <span class="hint">From your last stop</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your business</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-crew">Crew size</label>
+          <div class="inbox"><input id="f-crew" name="crew" inputmode="numeric" value="1"><span class="unit">people</span></div>
+          <span class="hint">People on this yard</span>
+        </div>
+        <div class="field">
+          <label for="f-pay">Pay per labor hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-pay" name="pay" inputmode="decimal" value="20"></div>
+          <span class="hint">What you pay a person, or yourself</span>
+        </div>
+        <div class="field">
+          <label for="f-overhead">Monthly overhead</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-overhead" name="overhead" inputmode="decimal" value="900"></div>
+          <span class="hint">Insurance, phone, software, ads, storage</span>
+        </div>
+        <div class="field">
+          <label for="f-margin">Profit margin you want</label>
+          <div class="inbox"><input id="f-margin" name="margin" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">Share of the price you keep</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Price per visit</div>
+      <div class="big"><b data-out="suggested" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Mowing time (minutes)</span><b data-out="mow_min" data-format="num"></b></li>
+        <li><span>Minutes on site (crew clock)</span><b data-out="onsite" data-format="num"></b></li>
+        <li><span>Labor hours, drive included</span><b data-out="manhours" data-format="num1"></b></li>
+        <li><span>True cost of the visit</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Profit per visit</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Profit margin</span><b data-out="pct" data-format="pct"></b></li>
+        <li><span>Price per labor hour</span><b data-out="per_mh" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Mowing time is lawn size divided by how many square feet your mower covers in an hour, times a slowdown for obstacles and slope. If you have a crew, the trim, edge and blow work is split between them, but they all wait for the mower.</p>
+    <p>True cost adds up pay for everyone on site and in the truck (with 12% added for payroll taxes and insurance), fuel and equipment wear while on site, truck cost while driving, and one visit's share of your overhead. Price is cost divided by one minus your margin, rounded up to the next $5, and never under a $45 minimum.</p>
+    <p>To keep it short, a few things are held at the kit's starting values: fuel $4.50 and equipment $9 per hour on site, truck $14 per drive hour, 180 visits a month to share overhead across, no slowdown for gates, and weekly mowing. Mower speeds are rough, open-lawn numbers. Time a few of your own yards.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Price per hour or per square foot leaves out the drive. Small lawns cost more per square foot because you still drive, unload and pack up.</li>
+      <li>Overhead is rarely in the number. Insurance, phone and storage are paid whether you mow or not.</li>
+      <li>A margin is not a markup. A 30% margin means you keep 30% of the price, which is cost divided by 0.70.</li>
+      <li>Slopes and obstacles slow the mower, and most guides ignore them.</li>
+      <li>Local prices differ a lot. Use this as your floor, then look at what neighbors charge.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Lawn Care Pricing &amp; Bid Kit is an Excel workbook (.xlsx). It adds gates, mowing every two weeks, add-on jobs like leaf cleanup and mulch, a customer-ready bid and a bid log, with your own costs set once.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4607237721">See the Lawn Care Pricing &amp; Bid Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4607415333">the lawn care bundle</a></p>
+  </aside>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/lawn-mowing-price-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Short-Term Rental Profit Calculator: Profit per Night and Break-Even Occupancy | ClearDayTrackers</title>
+<meta name="description" content="Free vacation rental profit calculator. See what a stay really leaves after the platform fee on rent and cleaning, the turnover, and your break-even occupancy.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/short-term-rental-profit-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #1F7A6F; --accent-soft: #E4F2F0;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Short-term rental hosts</p>
+  <h1>How much does a vacation rental stay really make you?</h1>
+  <div class="rule"></div>
+  <p class="lede">The nightly rate looks bigger than it is. The booking platform takes its fee on the cleaning fee too, and every stay costs a turnover. This shows profit per stay, profit per night, and the occupancy you need to break even.</p>
+
+  <form class="calc" data-calc="short-term-rental-profit-calculator" novalidate>
+    <fieldset>
+      <legend>One stay</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-rate">Average nightly rate</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-rate" name="rate" inputmode="decimal" value="135"></div>
+          <span class="hint">Weekends and weeknights averaged.</span>
+        </div>
+        <div class="field">
+          <label for="f-nights">Nights in the stay</label>
+          <div class="inbox"><input id="f-nights" name="nights" inputmode="numeric" value="3"><span class="unit">nights</span></div>
+          <span class="hint">Your average stay.</span>
+        </div>
+        <div class="field">
+          <label for="f-clean">Cleaning fee you charge</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-clean" name="clean" inputmode="decimal" value="95"></div>
+          <span class="hint">What the guest pays.</span>
+        </div>
+        <div class="field">
+          <label for="f-fee">Platform fee</label>
+          <div class="inbox"><input id="f-fee" name="fee" inputmode="decimal" value="15.5"><span class="unit">%</span></div>
+          <span class="hint">Host-only fees run about 14-16%; split fees about 3%.</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Turnover costs (per stay)</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-cleaner">Cleaner pay</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-cleaner" name="cleaner" inputmode="decimal" value="80"></div>
+          <span class="hint">What you pay per clean.</span>
+        </div>
+        <div class="field">
+          <label for="f-laundry">Laundry</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-laundry" name="laundry" inputmode="decimal" value="12"></div>
+          <span class="hint">0 if the cleaner does it.</span>
+        </div>
+        <div class="field">
+          <label for="f-supplies">Supplies</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-supplies" name="supplies" inputmode="decimal" value="14"></div>
+          <span class="hint">Soap, paper goods, coffee.</span>
+        </div>
+        <div class="field">
+          <label for="f-target">Profit goal per night</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-target" name="target" inputmode="decimal" value="75"></div>
+          <span class="hint">0 to skip the check.</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Break-even</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-fixed">Fixed costs per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-fixed" name="fixed" inputmode="decimal" value="1500"></div>
+          <span class="hint">Mortgage or rent, utilities, insurance, upkeep (yearly bills / 12).</span>
+        </div>
+        <div class="field">
+          <label for="f-occ">Occupancy you expect</label>
+          <div class="inbox"><input id="f-occ" name="occ" inputmode="decimal" value="60"><span class="unit">%</span></div>
+          <span class="hint">Share of the year's nights booked.</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Profit per stay</div>
+      <div class="big"><b data-out="profit" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>Profit per night</span><b data-out="ppn" data-format="money"></b></li>
+        <li><span>Rent for the stay</span><b data-out="rent" data-format="money"></b></li>
+        <li><span>Cleaning fee collected</span><b data-out="clean" data-format="money"></b></li>
+        <li><span>Platform fee (rent and cleaning)</span><b data-out="fee" data-format="money"></b></li>
+        <li><span>Turnover cost</span><b data-out="turn" data-format="money"></b></li>
+        <li><span>Break-even occupancy</span><b data-out="be" data-format="pct"></b></li>
+        <li><span>Booked nights a year to break even</span><b data-out="nights" data-format="num"></b></li>
+        <li><span>Cushion over break-even (points)</span><b data-out="cushion" data-format="num1"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>For one stay: rent is nights times the nightly rate. The platform fee is charged on rent plus the cleaning fee. Profit per stay is rent plus cleaning fee, minus that fee, minus the turnover (cleaner, laundry, supplies). Profit per night is that divided by the nights.</p>
+    <p>For break-even, the page uses what one booked night keeps (the same as profit per night): the rate after the fee, plus the cleaning fee after its fee minus the turnover, spread over the stay. Your fixed costs for the year (monthly times 12) divided by what one night keeps gives the booked nights you need. Divide by 365 for the break-even occupancy. The cushion is your expected occupancy minus that, in percentage points.</p>
+    <p>Held at the kit's defaults: one booked stay length for the whole year, no seasons or weekend prices (use an average rate), and lodging tax left out, because guests pay it and it passes through to the tax office.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>The quick rule, fixed costs divided by 365 times the rate, leaves out the fee and the turnovers, so it looks safer than it is. The page shows it next to the real number.</li>
+      <li>Many calculators take the fee on the rent only. A host-only fee is charged on the cleaning fee too.</li>
+      <li>Every stay carries one whole turnover. A 1-night stay can look fine by rate and still fall under your profit goal.</li>
+      <li>Fee models differ, so the fee is a box you can change, not a fixed number.</li>
+      <li>Break-even alone is a bare minimum. The cushion line shows how much room you have if a slow month hits.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Short-Term Rental Nightly Profit &amp; Pricing Kit is an Excel workbook (.xlsx). It logs each stay and shows what it really left you, plans a 12-month rate calendar by season, checks your minimum stay and gap-night prices for each rental, tracks what happened after each rate change, and prints a direct rate sheet. It will not promise bookings or income; it works from your own numbers.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4608904386">See the Short-Term Rental Nightly Profit &amp; Pricing Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4609535318">the Short-Term Rental Host Bundle</a>, with more kits for hosts.</p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/short-term-rental-profit-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Daycare Time-Space Percentage Calculator | ClearDayTrackers</title>
+<meta name="description" content="Work out your home daycare time-space percentage: time % times space %, with exclusive rooms counted in full, and the share of your home costs it gives.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/home-daycare-time-space-percentage/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #BF3A12; --accent-soft: #FCEBE4;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Home daycare</p>
+  <h1>Home daycare time-space percentage calculator</h1>
+  <div class="rule"></div>
+  <p class="lede">Type your weekly hours and your rooms. You get your time %, your space %, and the share of your home costs that comes out of them. Work you do with no children here counts too.</p>
+
+  <form class="calc" data-calc="home-daycare-time-space-percentage" novalidate>
+    <fieldset>
+      <legend>Your hours</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-childHours">Hours children are here</label>
+          <div class="inbox"><input id="f-childHours" name="childHours" inputmode="decimal" value="52"><span class="unit">per week</span></div>
+          <span class="hint">An average week you are open</span>
+        </div>
+        <div class="field">
+          <label for="f-workHours">Work hours, no children here</label>
+          <div class="inbox"><input id="f-workHours" name="workHours" inputmode="decimal" value="10"><span class="unit">per week</span></div>
+          <span class="hint">Cleaning, meal prep, planning, paperwork</span>
+        </div>
+        <div class="field">
+          <label for="f-weeks">Weeks you provide care</label>
+          <div class="inbox"><input id="f-weeks" name="weeks" inputmode="numeric" value="48"><span class="unit">weeks</span></div>
+          <span class="hint">Out of 52 in the year</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your home</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-homeSqft">Whole home</label>
+          <div class="inbox"><input id="f-homeSqft" name="homeSqft" inputmode="decimal" value="1850"><span class="unit">sq ft</span></div>
+          <span class="hint">Total living space</span>
+        </div>
+        <div class="field">
+          <label for="f-exclSqft">Business-only rooms</label>
+          <div class="inbox"><input id="f-exclSqft" name="exclSqft" inputmode="decimal" value="260"><span class="unit">sq ft</span></div>
+          <span class="hint">Used only for the business. 0 if none</span>
+        </div>
+        <div class="field">
+          <label for="f-sharedSqft">Shared rooms used for care</label>
+          <div class="inbox"><input id="f-sharedSqft" name="sharedSqft" inputmode="decimal" value="935"><span class="unit">sq ft</span></div>
+          <span class="hint">Kitchen, living room, and so on</span>
+        </div>
+        <div class="field">
+          <label for="f-costs">Home costs for the year</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-costs" name="costs" inputmode="decimal" value="16580"></div>
+          <span class="hint">Rent or mortgage interest, utilities, insurance, repairs</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Your home-cost share</div>
+      <div class="big"><b data-out="share" data-format="pct"></b></div>
+      <ul class="rows">
+        <li><span>Business hours in the year</span><b data-out="bizHours" data-format="num"></b></li>
+        <li><span>Time % (of 8,760 hours)</span><b data-out="time" data-format="pct"></b></li>
+        <li><span>Space % (rooms used for care)</span><b data-out="space" data-format="pct"></b></li>
+        <li><span>Business-only rooms, counted in full</span><b data-out="excl" data-format="pct"></b></li>
+        <li><span>Shared rooms x time %</span><b data-out="sharedTime" data-format="pct"></b></li>
+        <li><span>Home costs counted</span><b data-out="deduction" data-format="money"></b></li>
+        <li><span>Of that, from work hours with no children here</span><b data-out="added" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Time % is your business hours in the year divided by the hours in a year (8,760). Business hours are the hours children are here plus the work hours you put in with no children here, times the weeks you provide care.</p>
+    <p>Space % is the square feet of the rooms used for care divided by the square feet of your whole home. A room used only for the business counts in full. A shared room counts by time %. So your home-cost share is the business-only rooms plus the shared rooms times your time %. With no business-only rooms, that is simply space % times time %.</p>
+    <p>Your yearly home costs times that share is the part of them counted. The last row shows how much of it comes from the work hours when no children were here.</p>
+    <p>To keep the page short, some things are held the way the kit starts: the year is a full 365 days (8,760 hours), and every week uses the same two hour numbers. Your real year has holidays, sick days and busy weeks.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Many only multiply two percentages. Rooms used only for the business should not be cut down by time %.</li>
+      <li>Many leave out work done with no children here: cleaning, meal prep, planning, parent calls.</li>
+      <li>Most show a percent and stop. Here you see what it does to your actual home costs.</li>
+      <li>An average week is a guess. Written-down weekly hours are the real thing, and they back up the number if anyone asks.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>The Home Daycare Time-Space &amp; Tax Deduction Kit is an Excel workbook (.xlsx). It has a weekly hours log, a room list, your home costs, a receipt log and a printable year summary for your preparer. It builds the same percentages from your real weeks instead of an average.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4611055882">See the Time-Space &amp; Tax Deduction Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611056819">the home daycare bundle</a></p>
+  </aside>
+
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/home-daycare-time-space-percentage.js"></script>
+</body>
+</html>

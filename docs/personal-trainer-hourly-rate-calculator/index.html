@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Trainer Hourly Rate Calculator: What You Really Make | ClearDayTrackers</title>
+<meta name="description" content="Free personal trainer hourly rate calculator. See what you really make per hour after unpaid hours, gym fees, card fees, travel and yearly costs, and the price rise to hit your target.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/personal-trainer-hourly-rate-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #4B3FA8; --accent-soft: #eeecf8;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Personal training</p>
+  <h1>What is my real hourly rate as a personal trainer?</h1>
+  <div class="rule"></div>
+  <p class="lede">A $75 session does not pay $75 an hour. Card fees, the gym's cut, the drive, setup, programming and messages all come out of it, and so do your yearly costs. This adds up a typical week and shows what each hour of work really pays.</p>
+
+  <form class="calc" data-calc="personal-trainer-hourly-rate-calculator" novalidate>
+    <fieldset>
+      <legend>Your typical week</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-sessions">Sessions a week</label>
+          <div class="inbox"><input id="f-sessions" name="sessions" inputmode="decimal" value="20"><span class="unit">sessions</span></div>
+          <span class="hint">Single sessions, paid one at a time</span>
+        </div>
+        <div class="field">
+          <label for="f-price">Price per session</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-price" name="price" inputmode="decimal" value="75"></div>
+          <span class="hint">What the client pays you</span>
+        </div>
+        <div class="field">
+          <label for="f-length">Session length</label>
+          <div class="inbox"><select id="f-length" name="length">
+            <option value="30 min">30 minutes</option>
+            <option value="45 min">45 minutes</option>
+            <option value="60 min" selected>60 minutes</option>
+          </select></div>
+          <span class="hint">Time with the client</span>
+        </div>
+        <div class="field">
+          <label for="f-place">Where you train</label>
+          <div class="inbox"><select id="f-place" name="place">
+            <option value="Gym" selected>At a gym</option>
+            <option value="Client's home">At the client's home</option>
+            <option value="Park">At a park</option>
+            <option value="Online">Online</option>
+          </select></div>
+          <span class="hint">Sets setup minutes, drive and car cost</span>
+        </div>
+        <div class="field">
+          <label for="f-unpaid">Unpaid hours a week</label>
+          <div class="inbox"><input id="f-unpaid" name="unpaid" inputmode="decimal" value="7"><span class="unit">hrs</span></div>
+          <span class="hint">Programming, check-ins, messages, admin</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Fees and costs</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-deal">Gym deal</label>
+          <div class="inbox"><select id="f-deal" name="deal">
+            <option value="Per-session fee" selected>Fee per session</option>
+            <option value="Flat rent">Rent a month</option>
+            <option value="Split">Gym keeps a share</option>
+            <option value="No gym fee">No gym fee</option>
+          </select></div>
+          <span class="hint">Fill in only the box for your deal</span>
+        </div>
+        <div class="field">
+          <label for="f-gym_fee">Gym fee per session</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-gym_fee" name="gym_fee" inputmode="decimal" value="15"></div>
+          <span class="hint">Only for "Fee per session"</span>
+        </div>
+        <div class="field">
+          <label for="f-gym_rent">Gym rent per month</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-gym_rent" name="gym_rent" inputmode="decimal" value=""></div>
+          <span class="hint">Only for "Rent a month"</span>
+        </div>
+        <div class="field">
+          <label for="f-gym_split">Share the gym keeps</label>
+          <div class="inbox"><input id="f-gym_split" name="gym_split" inputmode="decimal" value=""><span class="unit">%</span></div>
+          <span class="hint">Only for "Gym keeps a share" (like 40)</span>
+        </div>
+        <div class="field">
+          <label for="f-yearly">Yearly fixed costs</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-yearly" name="yearly" inputmode="decimal" value="3000"></div>
+          <span class="hint">Insurance, certification, apps, gear, marketing</span>
+        </div>
+        <div class="field">
+          <label for="f-card">Card fee</label>
+          <div class="inbox"><input id="f-card" name="card" inputmode="decimal" value="2.9"><span class="unit">%</span></div>
+          <span class="hint">Plus 30 cents a payment (fixed on this page)</span>
+        </div>
+        <div class="field">
+          <label for="f-target">Target pay per hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-target" name="target" inputmode="decimal" value="40"></div>
+          <span class="hint">What you want for each hour you work</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Real pay per hour of work</div>
+      <div class="big"><b data-out="pph" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>The price tag, per hour with the client</span><b data-out="sticker" data-format="money"></b></li>
+        <li><span>Hours you work a week</span><b data-out="hours" data-format="num1"></b></li>
+        <li><span>Share of those hours with clients</span><b data-out="share" data-format="pct"></b></li>
+        <li><span>Paid by clients a week</span><b data-out="paid" data-format="money"></b></li>
+        <li><span>Card fees</span><b data-out="card" data-format="money"></b></li>
+        <li><span>Gym fees</span><b data-out="gym" data-format="money"></b></li>
+        <li><span>Car costs</span><b data-out="car" data-format="money"></b></li>
+        <li><span>Yearly costs, per week worked</span><b data-out="fixed" data-format="money"></b></li>
+        <li><span>Kept a week, before income tax</span><b data-out="kept" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>It adds up one typical week. Clients pay you the session price (plus a small travel fee for a home or park visit past 10 miles). Then it takes off the card fee on each payment, the gym's fee or share for sessions at a gym, and the car cost of the drive. Your yearly costs are spread over 48 working weeks. What is left is what you keep before income tax.</p>
+    <p>Then it counts every hour: the sessions, setup minutes, the drive there and back, and your unpaid hours. Kept money divided by those hours is your real pay per hour. If you are under your target, it shows how much higher prices would need to be for this same week to reach it.</p>
+    <p>If your gym charges rent, the rent is counted for all 12 months a year and spread across your weeks. Held at the kit's usual numbers and not on the form: 48 weeks, a 30-cent flat card fee, 70 cents a mile for the car, 10 free miles then 60 cents a mile for travel, and setup and drive minutes for each place.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Many calculators divide income by billed hours. The real hours include programming, check-ins, messages and the drive.</li>
+      <li>The gym's cut is often mentioned and then left out of the number. Rent, a floor fee and a split each change the answer.</li>
+      <li>Card fees, car cost and yearly costs like insurance and certification renewals are small one at a time. Together they take a real bite from every session.</li>
+      <li>A rate means more with a goal beside it. The last line shows the price rise that would reach your target.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page checks one kind of session. The Personal Trainer Session Pricing &amp; Real Hourly Rate Kit is an Excel workbook (.xlsx). It handles a full week with mixed lengths, places and packages, compares gym deals at your volume, checks all 12 length and place options, and builds package prices and a rate card.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4609597983">See the Personal Trainer Session Pricing &amp; Real Hourly Rate Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4609839833">the Client Package &amp; No-Show Tracker</a>, for keeping track of packages and missed sessions.</p>
+  </aside>
+
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/personal-trainer-hourly-rate-calculator.js"></script>
+</body>
+</html>
