@@ -124,8 +124,27 @@
     <p>They come from <b>ClearDayTrackers</b>, a small shop that makes Excel workbooks for one-person businesses.
       Each calculator uses the same math as one of our kits. The kit does the rest of the job: price sheets, client
       lists, payment tracking and the scripts for awkward conversations. The calculators are free and stay free.</p>
-    <p>Nothing you type leaves your browser. No sign-up, no tracking, no ads.</p>
+    <p>Nothing you type in a calculator leaves your browser. The calculators need no sign-up, and there is no tracking and no ads.</p>
   </section>
+
+<!-- signup:start -->
+  <section class="signup" id="free-tracker" data-signup="off" hidden>
+    <h2>Free printable: the Real Pay Week tracker</h2>
+    <p>One page. Write down a week of jobs, costs and hours, and see what you really earned per hour, the drive and the
+      texts included. We email it to you, then send three short pricing tips over two weeks. Unsubscribe any time.</p>
+    <form class="signup-form" method="post" action="SIGNUP_FORM_URL">
+      <label for="su-email">Your email</label>
+      <div class="signup-row">
+        <input id="su-email" type="email" name="EMAIL" autocomplete="email" required placeholder="you@example.com">
+        <button class="go" type="submit">Send me the tracker</button>
+      </div>
+      <input class="hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="en">
+      <p class="signup-fine">You'll get one email to confirm first. Your address is kept by our email service, Brevo, and
+        is never sold. <a href="privacy/">Privacy</a></p>
+    </form>
+  </section>
+  <!-- signup:end -->
 
   <p class="note">These are rough guides built from common rules of thumb, not advice for your situation. Pages that
     touch taxes are general bookkeeping help, not tax or legal advice.</p>

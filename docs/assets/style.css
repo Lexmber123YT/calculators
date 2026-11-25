@@ -116,3 +116,19 @@ footer a { color: var(--ink-soft); }
 
 .more { margin: 22px 0 8px; padding: 12px 14px; border-radius: var(--radius); background: #f6f3ea; font-size: 16px; }
 .more a { font-weight: 600; }
+
+/* email signup box (freebie/signup.py switches it on; hidden until the email service is connected) */
+.signup[hidden] { display: none; }
+.signup { margin: 28px 0; padding: 18px; border-radius: var(--radius); background: var(--ink); color: #fff; }
+.signup h2 { margin: 0 0 6px; font-size: 21px; color: #fff; }
+.signup p { margin: 0 0 12px; color: #e9e3d6; max-width: 62ch; }
+.signup label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.signup-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.signup-row input { flex: 1 1 220px; min-width: 0; font: 17px var(--sans); padding: 11px 12px; border: 1px solid #cfc6b5; border-radius: 8px; color: var(--ink); }
+.signup-row input:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
+.signup button.go { background: var(--gold); color: var(--ink); }
+.signup .signup-fine { font-size: 13px; color: #c9c1b0; margin: 10px 0 0; }
+.signup .signup-fine a { color: #e8c48a; }
+.signup .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.download { display: inline-block; margin: 6px 0 14px; font-weight: 700; text-decoration: none; background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 8px; }
+.download:hover { background: #000; }

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /free/
 
 Sitemap: https://lexmber123yt.github.io/calculators/sitemap.xml
