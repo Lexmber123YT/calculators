@@ -75,6 +75,8 @@ button.go:hover { filter: brightness(.94); }
 .rows { margin: 12px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(0,0,0,.08); }
 .rows li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 16px; }
 .rows li b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rows li b[data-format="text"] { white-space: normal; text-align: right; }
+.rows li:has(> b:empty) { display: none; }  /* unused rows, e.g. draw 5 on a 4-draw schedule */
 .flag { margin: 10px 0 0; font-size: 15px; }
 .flag.warn { color: var(--warn); }
 .flag.good { color: var(--good); }
@@ -111,3 +113,6 @@ footer a { color: var(--ink-soft); }
   .big { font-size: 30px; }
   .top nav { display: none; }
 }
+
+.more { margin: 22px 0 8px; padding: 12px 14px; border-radius: var(--radius); background: #f6f3ea; font-size: 16px; }
+.more a { font-weight: 600; }

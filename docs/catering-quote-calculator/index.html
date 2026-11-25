@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering Quote Calculator: Price per Person That Pays | ClearDayTrackers</title>
+<meta name="description" content="Free catering quote and price calculator. Guests times price per person (or your minimum), travel fee, sales tax and deposit, then every cost and your profit per working hour.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/catering-quote-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #A63A2B; --accent-soft: #f8e9e6;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Catering</p>
+  <h1>Catering quote calculator: how do you price catering per person?</h1>
+  <div class="rule"></div>
+  <p class="lede">The quick answer is guests times a price per person. That skips the minimum spend, the drive, helper pay, prep and clean-up hours and card fees, so a small party can cost more than it pays. This builds the quote and then checks what it pays you per hour of work.</p>
+
+  <form class="calc" data-calc="catering-quote-calculator" novalidate>
+    <fieldset>
+      <legend>The menu</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-price">Price per guest</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-price" name="price" inputmode="decimal" value="26"></div>
+          <span class="hint">Before tax</span>
+        </div>
+        <div class="field">
+          <label for="f-cost">Food + packaging cost per guest</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-cost" name="cost" inputmode="decimal" value="8.90"></div>
+          <span class="hint">What one plate, box or cup costs you</span>
+        </div>
+        <div class="field">
+          <label for="f-minimum">Minimum spend</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-minimum" name="minimum" inputmode="decimal" value="1200"></div>
+          <span class="hint">The least any event pays for food. 0 = none</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>The event</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-guests">Guests</label>
+          <div class="inbox"><input id="f-guests" name="guests" inputmode="numeric" value="30"><span class="unit">guests</span></div>
+          <span class="hint">The headcount the host guarantees</span>
+        </div>
+        <div class="field">
+          <label for="f-helpers">Helpers</label>
+          <div class="inbox"><input id="f-helpers" name="helpers" inputmode="numeric" value="3"><span class="unit">people</span></div>
+          <span class="hint">Not counting you</span>
+        </div>
+        <div class="field">
+          <label for="f-hours">Hours on site</label>
+          <div class="inbox"><input id="f-hours" name="hours" inputmode="decimal" value="6"><span class="unit">hrs</span></div>
+          <span class="hint">Serving time only</span>
+        </div>
+        <div class="field">
+          <label for="f-miles">Round-trip miles</label>
+          <div class="inbox"><input id="f-miles" name="miles" inputmode="decimal" value="96"><span class="unit">mi</span></div>
+          <span class="hint">From your kitchen and back</span>
+        </div>
+        <div class="field">
+          <label for="f-tax">Sales tax rate</label>
+          <div class="inbox"><input id="f-tax" name="tax" inputmode="decimal" value="7"><span class="unit">%</span></div>
+          <span class="hint">Your local rate. Ask your tax office</span>
+        </div>
+        <div class="field">
+          <label for="f-target">Target profit per hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-target" name="target" inputmode="decimal" value="55"></div>
+          <span class="hint">What your own working hour should earn</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Quote total with tax</div>
+      <div class="big"><b data-out="T" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>Food charge</span><b data-out="food" data-format="money"></b></li>
+        <li><span>Travel fee</span><b data-out="travel" data-format="money"></b></li>
+        <li><span>Quote before sales tax</span><b data-out="R" data-format="money"></b></li>
+        <li><span>Sales tax</span><b data-out="S" data-format="money"></b></li>
+        <li><span>Deposit to ask for (30%)</span><b data-out="dep" data-format="money"></b></li>
+        <li><span>Per guest, before tax</span><b data-out="per" data-format="money"></b></li>
+        <li><span>Food and packaging</span><b data-out="fc" data-format="money"></b></li>
+        <li><span>Helper pay</span><b data-out="staff" data-format="money"></b></li>
+        <li><span>Truck cost for the drive</span><b data-out="drive" data-format="money"></b></li>
+        <li><span>Card and app fees</span><b data-out="card" data-format="money"></b></li>
+        <li><span>Profit</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Your working hours</span><b data-out="hrs" data-format="num1"></b></li>
+        <li><span>Profit per working hour</span><b data-out="perhr" data-format="money"></b></li>
+        <li><span>Verdict</span><b data-out="verdict" data-format="text"></b></li>
+        <li><span>Guests that clear your minimum</span><b data-out="minguests" data-format="num"></b></li>
+        <li><span>Per-guest price that reaches your target</span><b data-out="price_at" data-format="money"></b></li>
+        <li><span>Lowest quote before tax for your target</span><b data-out="lowest" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>The food charge is guests times your price per guest, or your minimum spend if that is more. A travel fee of $2 a mile is added for round-trip miles past the first 30. That is the quote before tax. Sales tax at your rate goes on top, and the deposit is 30% of the total. The per-person price is the quote before tax divided by the guests.</p>
+    <p>Then the costs: food and packaging for every guest, helper pay at $17 an hour for their hours on site plus 1.5 hours of set-up and clean-up each, the truck at $1.25 a mile, and 3% card and app fees on the total. What is left is your profit. Your own pay is not a cost: it is what is left.</p>
+    <p>Last, your working hours: hours on site, 3 hours of prep, 1.5 hours of clean-up, and the drive at 35 mph. Profit divided by those hours is what the event pays you per hour. If that is under your target, the page shows the lowest quote before tax (and the per-guest price, rounded up to a quarter) that would reach it. Held at the kit's usual numbers and not on the form: the 30% deposit, 3% card fees, $17 helper pay, 1.5 helper hours, 3 hours prep, 1.5 hours clean-up, 35 mph, $1.25 a mile, 30 free miles, $2 a mile, no rentals or extras.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Dividing food cost by a food cost target (about 25-35%) gives a menu price, not an event price. It leaves out the drive, helper pay and your own hours.</li>
+      <li>Small parties still take a full prep, drive and clean-up. A minimum spend is how the quote covers that; the page shows how many guests it takes to pass it.</li>
+      <li>Card fees are charged on the total with tax, not just the food. Small, but it is on every event.</li>
+      <li>A quote can look fine per person and still pay you less than you need per hour. The last lines show it, with the quote that would fix it.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page quotes one event with one menu price. The Food Truck Catering Quote, Deposit &amp; Balance Tracker is an Excel workbook (.xlsx). It holds all your catering packages with their food cost %, tracks every booking from quote to deposit to balance with due dates and a late list, writes the follow-up messages and prints a terms page. You can change every number held here.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4615611004">See the Food Truck Catering Quote &amp; Deposit Tracker on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4615705225">the food truck bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="catering" hidden></section>
+
+  <p class="more">More free calculators: <a href="../booth-rent-break-even-calculator/">booth rent break-even</a>, or <a href="../">see them all</a>.</p>
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/catering-quote-calculator.js"></script>
+</body>
+</html>

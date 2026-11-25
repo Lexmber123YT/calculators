@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pest Control Pricing Calculator: What to Charge per Visit | ClearDayTrackers</title>
+<meta name="description" content="Free pest control pricing calculator. Work out what one visit really costs you (tech time, drive, truck, materials), the lowest price that meets your profit target, and what your first-visit and recurring prices earn.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/pest-control-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #46525F; --accent-soft: #EEF0F2;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Pest control</p>
+  <h1>How much should I charge for a pest control visit?</h1>
+  <div class="rule"></div>
+  <p class="lede">A price list from a cost guide tells you what others charge, not what a visit costs you. This works out the cost of one visit from your own tech time, drive and materials, the lowest price that keeps your profit target, and what your first-visit and recurring prices really earn.</p>
+
+  <form class="calc" data-calc="pest-control-price-calculator" novalidate>
+    <fieldset>
+      <legend>Your costs and target</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-wage">Tech time cost per hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-wage" name="wage" inputmode="decimal" value="30"></div>
+          <span class="hint">Pay plus payroll costs</span>
+        </div>
+        <div class="field">
+          <label for="f-truck">Truck cost per drive minute</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-truck" name="truck" inputmode="decimal" value="0.35"></div>
+          <span class="hint">Gas and wear, your estimate</span>
+        </div>
+        <div class="field">
+          <label for="f-target">Profit you want from a visit</label>
+          <div class="inbox"><input id="f-target" name="target" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">Share of the price, 0 to 90</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>The service</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-materials">Materials per visit</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-materials" name="materials" inputmode="decimal" value="12"></div>
+          <span class="hint">What you use, at your cost</span>
+        </div>
+        <div class="field">
+          <label for="f-onsite">Minutes on site</label>
+          <div class="inbox"><input id="f-onsite" name="onsite" inputmode="decimal" value="35"><span class="unit">min</span></div>
+          <span class="hint">Walk-around, treatment, notes</span>
+        </div>
+        <div class="field">
+          <label for="f-drive">Drive minutes</label>
+          <div class="inbox"><input id="f-drive" name="drive" inputmode="decimal" value="20"><span class="unit">min</span></div>
+          <span class="hint">Round trip for this stop</span>
+        </div>
+        <div class="field">
+          <label for="f-first">First-visit price</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-first" name="first" inputmode="decimal" value="150"></div>
+          <span class="hint">What you charge now</span>
+        </div>
+        <div class="field">
+          <label for="f-recurring">Recurring price</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-recurring" name="recurring" inputmode="decimal" value="110"></div>
+          <span class="hint">Each visit after the first</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Lowest price that meets your target</div>
+      <div class="big"><b data-out="need" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Cost of one visit</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Tech hours, drive included</span><b data-out="hours" data-format="num1"></b></li>
+        <li><span>Profit, first visit</span><b data-out="profit_first" data-format="money"></b></li>
+        <li><span>First visit check</span><b data-out="verdict_first" data-format="text"></b></li>
+        <li><span>Profit, recurring visit</span><b data-out="profit_rec" data-format="money"></b></li>
+        <li><span>Recurring check</span><b data-out="verdict_rec" data-format="text"></b></li>
+        <li><span>Profit per tech hour, first visit</span><b data-out="pph_first" data-format="money"></b></li>
+        <li><span>Profit per tech hour, recurring</span><b data-out="pph_rec" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First it finds what one visit costs you. That is the materials, plus every minute of tech time (on site and driving) at your cost per hour, plus the drive minutes at your truck cost per minute. Drive time counts twice on purpose: the tech is paid for it and the truck wears for it.</p>
+    <p>Then it finds the lowest price that keeps your profit target. The cost is divided by (1 minus your target), and rounded up to the next dollar. At a 30% target, a $46.50 visit needs at least $67.</p>
+    <p>Last, it checks the prices you charge now. Profit is your price minus the cost. A price whose profit is under your target share of that price is marked "Below target", and one under the cost is marked "Loses money". Profit per tech hour divides that profit by the on-site and drive time together. This answers what a visit earns and the price floor for your target. It does not set your market price: check what others near you charge, then make sure your price is above this floor.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most guides give a national price range. Your floor depends on what your tech time, truck and materials cost, not on an average.</li>
+      <li>Drive time is the cost most often left out. A cheap monthly stop with a long drive can fall below target even when the price looks fine.</li>
+      <li>First visits and recurring visits often take the same drive and nearly the same time. Check the recurring price on its own, not only the first visit.</li>
+      <li>A margin on paper is not a margin per hour. Profit per tech hour shows which services are worth growing.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page checks one service. The Pest Control Service Slip &amp; Visit Profit Kit is an Excel workbook (.xlsx). It holds a table of all your services with first-visit and recurring prices, logs every visit on one line, prints a one-page service slip for the customer, shows profit by service and by month, and tracks what free callbacks cost you.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4618481272">See the Pest Control Service Slip &amp; Visit Profit Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4620831081">the pest control business bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="pest-control" hidden></section>
+
+  <p class="more">More free calculators: <a href="../lawn-mowing-price-calculator/">lawn mowing price</a>, <a href="../handyman-job-price-calculator/">handyman job price</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/pest-control-price-calculator.js"></script>
+</body>
+</html>

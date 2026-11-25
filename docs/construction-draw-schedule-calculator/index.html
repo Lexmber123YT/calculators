@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construction Draw Schedule Calculator: Percentages to Dollar Draws | ClearDayTrackers</title>
+<meta name="description" content="Free contractor draw schedule calculator. Type the contract price and the percent for each draw: get each draw in dollars, a check that the percents total 100%, and a deposit cap.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/construction-draw-schedule-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #24668A; --accent-soft: #e2eef5;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Contractors</p>
+  <h1>Contractor draw schedule: what is each draw in dollars?</h1>
+  <div class="rule"></div>
+  <p class="lede">A draw schedule splits the contract price into payments tied to steps of the job. Type the price and the percent for each draw. You get every draw in dollars, a check that the percents add to 100%, and the last draw adjusted so the total matches the price to the cent.</p>
+
+  <form class="calc" data-calc="construction-draw-schedule-calculator" novalidate>
+    <fieldset>
+      <legend>The job</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-price">Contract price</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-price" name="price" inputmode="decimal" value="14500"></div>
+          <span class="hint">The full price on the signed contract</span>
+        </div>
+        <div class="field">
+          <label for="f-draws">Number of draws</label>
+          <div class="inbox"><select id="f-draws" name="draws">
+            <option>2</option>
+            <option>3</option>
+            <option selected>4</option>
+            <option>5</option>
+          </select></div>
+          <span class="hint">Payments, counting the deposit and the final</span>
+        </div>
+        <div class="field">
+          <label for="f-cap">Deposit cap</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-cap" name="cap" inputmode="decimal" value="0"></div>
+          <span class="hint">Your state's dollar limit, if any. 0 = no cap</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Percent of the price at each draw</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-p1">Draw 1 (deposit)</label>
+          <div class="inbox"><input id="f-p1" name="p1" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">At signing, to schedule the job</span>
+        </div>
+        <div class="field">
+          <label for="f-p2">Draw 2</label>
+          <div class="inbox"><input id="f-p2" name="p2" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">For example: rough-in passes inspection</span>
+        </div>
+        <div class="field">
+          <label for="f-p3">Draw 3</label>
+          <div class="inbox"><input id="f-p3" name="p3" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">For example: the work is finished</span>
+        </div>
+        <div class="field">
+          <label for="f-p4">Draw 4</label>
+          <div class="inbox"><input id="f-p4" name="p4" inputmode="decimal" value="10"><span class="unit">%</span></div>
+          <span class="hint">For example: punch list signed off</span>
+        </div>
+        <div class="field">
+          <label for="f-p5">Draw 5</label>
+          <div class="inbox"><input id="f-p5" name="p5" inputmode="decimal" value="0"><span class="unit">%</span></div>
+          <span class="hint">Ignored unless you pick 5 draws</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Percent check</div>
+      <div class="big"><b data-out="check" data-format="text"></b></div>
+      <ul class="rows">
+        <li><span>Draw 1 (deposit)</span><b data-out="d1" data-format="money"></b></li>
+        <li><span>Draw 2</span><b data-out="d2" data-format="money"></b></li>
+        <li><span>Draw 3</span><b data-out="d3" data-format="money"></b></li>
+        <li><span>Draw 4</span><b data-out="d4" data-format="money"></b></li>
+        <li><span>Draw 5</span><b data-out="d5" data-format="money"></b></li>
+        <li><span>Percents add to</span><b data-out="total" data-format="pct"></b></li>
+        <li><span>All draws together</span><b data-out="scheduled" data-format="money"></b></li>
+        <li><span>Moved to draw 2 by the cap</span><b data-out="shift" data-format="money"></b></li>
+        <li><span>Final payment held to the end</span><b data-out="final_draw" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Each draw is the contract price times its percent, rounded to the cent. When the percents add to 100%, the last draw is whatever is left after the others, so the draws always add up to the exact price (no stray penny). If they don't add to 100%, each draw is just its own percent and the check tells you how far off you are.</p>
+    <p>If you type a deposit cap, draw 1 is cut to the cap and the money it can't hold moves to draw 2. The total stays the same. Percents for draws past the number you picked are ignored.</p>
+    <h2>Common draw schedules (rough starting points)</h2>
+    <ul>
+      <li>2 draws: 50% at signing, 50% when the job is finished and signed off. Small jobs.</li>
+      <li>3 draws: 40% / 50% / 10%. Signing, about half done, punch list signed off.</li>
+      <li>4 draws: 30% / 30% / 30% / 10%. Signing, rough-in passes inspection, work finished, punch list.</li>
+      <li>5 draws: 20% / 25% / 25% / 20% / 10%. Signing, materials on site, rough-in, finished, punch list.</li>
+    </ul>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most lists give percents and stop. They don't check that your own percents add to 100%, or round so the dollars match the contract to the cent.</li>
+      <li>Some states cap the deposit on home work. A cap changes draw 2 too; few calculators show that.</li>
+      <li>Bank construction-loan draws are a different system. This is the payment plan between you and the homeowner.</li>
+      <li>A big last draw is the hardest to collect. Many contractors keep the final to about 5-10% so one small punch-list item doesn't hold up a large payment.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page splits one price. The Contractor Draw &amp; Final Payment Tracker is an Excel workbook (.xlsx). It holds the draw plan for every job, logs each draw as you ask and get paid, shows how much of each job you are funding with your own money, lists the draws to ask for or chase, holds the final behind a punch list and fills in the messages to send. It also prints a pay plan sheet for the customer to sign.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4611740257">See the Contractor Draw &amp; Final Payment Tracker on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611776625">the contractor bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="contractor" hidden></section>
+
+  <p class="more">More free calculators: <a href="../contractor-quote-calculator/">contractor quote price</a>, <a href="../handyman-job-price-calculator/">handyman small-job price</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">A business tool, not legal advice. Deposit limits and payment rules differ by state and job type; check your state's rules. The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/construction-draw-schedule-calculator.js"></script>
+</body>
+</html>

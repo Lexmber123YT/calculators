@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Grooming Price Calculator: How Much to Charge per Groom | ClearDayTrackers</title>
+<meta name="description" content="Free dog grooming price calculator. Work out what to charge from the dog's size, coat, breed and condition, your pay, rent and card fees, then check the price you charge now.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/dog-grooming-price-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #3E7C59; --accent-soft: #e9f2ec;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Dog grooming</p>
+  <h1>How much should I charge for dog grooming?</h1>
+  <div class="rule"></div>
+  <p class="lede">Most price lists go by weight. But a doodle and a lab of the same size are not the same job: one can take twice the table time. This prices the groom from the minutes it really takes and what an hour of your shop costs.</p>
+
+  <form class="calc" data-calc="dog-grooming-price-calculator" novalidate>
+    <fieldset>
+      <legend>The dog</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-group">Breed group</label>
+          <div class="inbox"><select id="f-group" name="group">
+            <option>Smooth &amp; short coats</option>
+            <option>Double coats</option>
+            <option>Silky drop coats</option>
+            <option>Terriers</option>
+            <option>Spaniels &amp; setters</option>
+            <option>Poodles &amp; bichons</option>
+            <option selected>Doodles &amp; oodle mixes</option>
+            <option>Giant &amp; working breeds</option>
+            <option>Mixed / other</option>
+          </select></div>
+          <span class="hint">Sets how long the haircut takes</span>
+        </div>
+        <div class="field">
+          <label for="f-size">Size</label>
+          <div class="inbox"><select id="f-size" name="size">
+            <option>Small</option>
+            <option selected>Medium</option>
+            <option>Large</option>
+            <option>X-Large</option>
+          </select></div>
+          <span class="hint">Under 20 lb, 20-50, 50-90, 90 and up</span>
+        </div>
+        <div class="field">
+          <label for="f-coat">Coat type</label>
+          <div class="inbox"><select id="f-coat" name="coat">
+            <option>Smooth / short</option>
+            <option>Wire</option>
+            <option>Silky / drop</option>
+            <option>Double coat</option>
+            <option selected>Curly / doodle</option>
+          </select></div>
+          <span class="hint">Sets bath and dry time</span>
+        </div>
+        <div class="field">
+          <label for="f-condition">Coat condition today</label>
+          <div class="inbox"><select id="f-condition" name="condition">
+            <option>Well kept (under 6 weeks)</option>
+            <option selected>Overdue (7-12 weeks)</option>
+            <option>Tangled or neglected</option>
+          </select></div>
+          <span class="hint">Feel for mats at check-in</span>
+        </div>
+        <div class="field">
+          <label for="f-service">Service</label>
+          <div class="inbox"><select id="f-service" name="service">
+            <option>Bath &amp; brush</option>
+            <option>Bath &amp; tidy</option>
+            <option selected>Full groom</option>
+            <option>Hand-scissor finish</option>
+            <option>Shave-down</option>
+          </select></div>
+          <span class="hint">Nails and ears are in every service</span>
+        </div>
+        <div class="field">
+          <label for="f-nails">Nail grinds</label>
+          <div class="inbox"><input id="f-nails" name="nails" inputmode="numeric" value="1"></div>
+          <span class="hint">10 minutes each, 0 if none</span>
+        </div>
+        <div class="field">
+          <label for="f-demat">De-matting blocks</label>
+          <div class="inbox"><input id="f-demat" name="demat" inputmode="numeric" value="2"><span class="unit">x 15 min</span></div>
+          <span class="hint">0 if the coat is clean</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your shop</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-pay">Groomer pay per hour</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-pay" name="pay" inputmode="decimal" value="21"></div>
+          <span class="hint">Or what you pay yourself</span>
+        </div>
+        <div class="field">
+          <label for="f-overhead">Monthly overhead</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-overhead" name="overhead" inputmode="decimal" value="2400"></div>
+          <span class="hint">Rent, utilities, insurance, software, laundry, van</span>
+        </div>
+        <div class="field">
+          <label for="f-hours">Grooming hours a month</label>
+          <div class="inbox"><input id="f-hours" name="hours" inputmode="decimal" value="240"><span class="unit">hrs</span></div>
+          <span class="hint">All groomers together</span>
+        </div>
+        <div class="field">
+          <label for="f-margin">Profit margin you want</label>
+          <div class="inbox"><input id="f-margin" name="margin" inputmode="decimal" value="30"><span class="unit">%</span></div>
+          <span class="hint">25 to 35 is a common goal</span>
+        </div>
+        <div class="field">
+          <label for="f-price_now">Price you charge now</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-price_now" name="price_now" inputmode="decimal" value="140"></div>
+          <span class="hint">Optional. Blank checks the suggested price</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Suggested price (keeps your margin, rounded up to $5)</div>
+      <div class="big"><b data-out="suggested" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Minutes to book</span><b data-out="minutes" data-format="num"></b></li>
+        <li><span>Groomer pay</span><b data-out="pay_cost" data-format="money"></b></li>
+        <li><span>Shampoo and supplies</span><b data-out="supplies" data-format="money"></b></li>
+        <li><span>Share of overhead</span><b data-out="overhead_cost" data-format="money"></b></li>
+        <li><span>Cost before card fee</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Price being checked</span><b data-out="checked" data-format="money"></b></li>
+        <li><span>Card fee</span><b data-out="fee" data-format="money"></b></li>
+        <li><span>True cost of this groom</span><b data-out="true_cost" data-format="money"></b></li>
+        <li><span>Profit on this groom</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Profit margin</span><b data-out="pmargin" data-format="pct"></b></li>
+        <li><span>Profit per groom hour</span><b data-out="per_hr" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First it works out the minutes. Bath and dry time comes from the size, the coat type and the condition. Haircut time comes from the size, the breed group, the service and the condition. Nail grinds add 10 minutes each and de-matting adds 15 minutes a block. Then 10 minutes go on for check-in, kennel and cleanup.</p>
+    <p>Then it costs those minutes. Groomer pay gets 10% added for payroll extras. Your monthly overhead is spread over your grooming hours, so a long groom carries more of the rent. Supplies go on top, by size and add-on.</p>
+    <p>Last, the price. The cost is divided by what is left of each dollar after your margin and a 3% card fee, then rounded up to the next $5. If you type the price you charge now, it checks that price: true cost, profit, margin and profit per groom hour. Held at the kit's usual numbers and not on the form: 10% payroll extras, 3% card fee, no commission, 10 extra minutes per groom, no van cost, and the kit's own time tables for each size, coat, breed group and service.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most guides give a price range by weight. Coat and breed change the table time far more than a few pounds do, and time is what you pay for.</li>
+      <li>An overdue coat slows the bath and the haircut. Mats are their own time block, not a free extra.</li>
+      <li>Check-in, kennel time and cleanup are minutes you pay for. So is your share of rent for every hour the dog is in the shop.</li>
+      <li>The card fee comes off the top of every groom. A price that only covers your costs leaves no profit once it's taken.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page prices one dog. The Dog Grooming Pricing &amp; Profit Kit is an Excel workbook (.xlsx). It tunes the time for each breed group, prices seven add-ons, prints a price sheet by size and coat, and logs every groom so you can see which breeds really make you money. You can also change every number held here.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4607259192">See the Dog Grooming Pricing &amp; Profit Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4607436152">the dog grooming bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="dog-grooming" hidden></section>
+
+  <p class="more">More free calculators: <a href="../dog-walking-price-calculator/">dog walking price</a>, <a href="../pet-sitting-holiday-rate-calculator/">pet sitting holiday rates</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/dog-grooming-price-calculator.js"></script>
+</body>
+</html>

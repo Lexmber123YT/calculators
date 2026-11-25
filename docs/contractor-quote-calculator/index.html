@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contractor Quote Calculator: Estimate and Bid Price for a Job | ClearDayTrackers</title>
+<meta name="description" content="Free contractor quote and estimate calculator. Cost labor at what your hour really costs, mark up materials, add trip charge and contingency, then price to your margin.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/contractor-quote-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #1F3A5F; --accent-soft: #e7edf4;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Contractors</p>
+  <h1>Contractor quote calculator: what should this job cost the customer?</h1>
+  <div class="rule"></div>
+  <p class="lede">Most quotes are built on a guessed hourly rate. This one starts from what a billable hour really costs you (pay, payroll extras, truck, tools, insurance), then adds markup, a trip charge and a cushion for surprises, and prices the job to the margin you want.</p>
+
+  <form class="calc" data-calc="contractor-quote-calculator" novalidate>
+    <fieldset>
+      <legend>Your hour</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-wage">Hourly pay</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-wage" name="wage" inputmode="decimal" value="32"></div>
+          <span class="hint">What you pay yourself (or a helper), before taxes</span>
+        </div>
+        <div class="field">
+          <label for="f-bill">Billable hours a week</label>
+          <div class="inbox"><input id="f-bill" name="bill" inputmode="decimal" value="28"><span class="unit">hrs</span></div>
+          <span class="hint">Hours a customer pays for. Not driving or estimates</span>
+        </div>
+        <div class="field">
+          <label for="f-overhead">Yearly overhead</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-overhead" name="overhead" inputmode="decimal" value="19000"></div>
+          <span class="hint">Truck, tools, insurance, phone, software, ads</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>The job</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-labor">Labor hours</label>
+          <div class="inbox"><input id="f-labor" name="labor" inputmode="decimal" value="14"><span class="unit">hrs</span></div>
+          <span class="hint">Your best guess for the whole job</span>
+        </div>
+        <div class="field">
+          <label for="f-materials">Materials at your cost</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-materials" name="materials" inputmode="decimal" value="410.50"></div>
+          <span class="hint">What the supply house charges you</span>
+        </div>
+        <div class="field">
+          <label for="f-markup">Markup on materials</label>
+          <div class="inbox"><input id="f-markup" name="markup" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">Buying runs, returns, waste</span>
+        </div>
+        <div class="field">
+          <label for="f-other">Subs, rentals, dump fees</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-other" name="other" inputmode="decimal" value="130"></div>
+          <span class="hint">At your cost. Marked up 15%</span>
+        </div>
+        <div class="field">
+          <label for="f-trip">Trip charge</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-trip" name="trip" inputmode="decimal" value="75"></div>
+          <span class="hint">0 if you don't add one</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your pricing rules</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-cont">Contingency</label>
+          <div class="inbox"><input id="f-cont" name="cont" inputmode="decimal" value="10"><span class="unit">%</span></div>
+          <span class="hint">For rot, out-of-square walls, one more run</span>
+        </div>
+        <div class="field">
+          <label for="f-margin">Target profit margin</label>
+          <div class="inbox"><input id="f-margin" name="margin" inputmode="decimal" value="20"><span class="unit">%</span></div>
+          <span class="hint">Share of the price left after every cost</span>
+        </div>
+        <div class="field">
+          <label for="f-minimum">Minimum job charge</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-minimum" name="minimum" inputmode="decimal" value="250"></div>
+          <span class="hint">No job is priced below this</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Price to quote (rounded up to $5)</div>
+      <div class="big"><b data-out="suggested" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Your true cost per billable hour</span><b data-out="loaded" data-format="money"></b></li>
+        <li><span>Lowest hourly rate that hits your margin</span><b data-out="rate_min" data-format="money"></b></li>
+        <li><span>Your cost: labor, materials, other</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Your markups</span><b data-out="markups" data-format="money"></b></li>
+        <li><span>Trip charge</span><b data-out="trip" data-format="money"></b></li>
+        <li><span>Contingency for surprises</span><b data-out="cont" data-format="money"></b></li>
+        <li><span>Profit at your target margin</span><b data-out="profit_t" data-format="money"></b></li>
+        <li><span>Profit on the job at this price</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Margin</span><b data-out="margin" data-format="pct"></b></li>
+        <li><span>Margin if the contingency gets used</span><b data-out="margin_used" data-format="pct"></b></li>
+        <li><span>Profit per labor hour</span><b data-out="per_labor" data-format="money"></b></li>
+        <li><span>Deposit to schedule the work</span><b data-out="deposit" data-format="money0"></b></li>
+        <li><span>Verdict</span><b data-out="verdict" data-format="text"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First it finds your true cost per billable hour. Your pay plus 18% for payroll taxes and workers' comp, for 40 paid hours a week, is spread over only the hours a customer pays for. Your yearly overhead is spread over those same billable hours (48 weeks a year, one person in the field). Every labor hour on the quote is costed at that number.</p>
+    <p>Then it builds the price. Your cost is labor plus materials plus subs, rentals and dump fees. Materials get your markup; subs, rentals and dump fees get 15%. The trip charge goes on top. Contingency is a percent of all of that. Last, the total is grossed up so your target margin is left after every cost: total / (1 - margin). The price is rounded up to the next $5 and never goes under your minimum.</p>
+    <p>The deposit is 30% of the price on jobs over $500 (smaller jobs are paid on completion). Held at the kit's usual numbers and not on the form: 18% payroll extras, 40 paid hours, 48 weeks, one person, 15% markup on subs and rentals, permits passed through at cost, no deposit cap. Some states limit deposits on home work, so check yours.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Markup is not margin. A 25% markup on cost leaves only about a 20% margin. This page prices to the margin, so the share you want is really left.</li>
+      <li>A guessed hourly rate hides the hours nobody pays for. Driving, estimates and supply runs make your real cost per billable hour much higher than your pay.</li>
+      <li>Contingency is often left off, then the surprise comes out of profit. Here it is priced in, and the last margin line shows what is left if every dollar of it gets used.</li>
+      <li>Small jobs need a floor. The minimum job charge is checked last, so a quick fix never goes out under it.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page prices one job with three cost lines. The Contractor Quote &amp; Get-Paid Kit is an Excel workbook (.xlsx). It takes up to 25 lines per quote with their own markups, prints a clean customer quote with the deposit on it, tracks invoices and late payments with follow-up messages, and compares quoted against actual hours after each job. You can change every number held here.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4607259002">See the Contractor Quote &amp; Get-Paid Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611776625">the contractor bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="contractor" hidden></section>
+
+  <p class="more">More free calculators: <a href="../construction-draw-schedule-calculator/">construction draw schedule</a>, <a href="../handyman-job-price-calculator/">handyman small-job price</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/contractor-quote-calculator.js"></script>
+</body>
+</html>

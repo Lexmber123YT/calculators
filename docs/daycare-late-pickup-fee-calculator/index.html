@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daycare Late Pickup Fee Calculator: Set Your Late Pick-Up Policy | ClearDayTrackers</title>
+<meta name="description" content="Free daycare late pickup fee calculator. Type your grace minutes, per-minute or per-block fee and limit, and see the fee for any late pick-up, a 5 to 60 minute table, and the rule in plain words.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/daycare-late-pickup-fee-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #0E6464; --accent-soft: #E2F1F1;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Home daycare</p>
+  <h1>What should a daycare late pickup fee be?</h1>
+  <div class="rule"></div>
+  <p class="lede">There is no standard late fee. What matters is a rule parents can read one way only: how many grace minutes, where the fee starts counting, per minute or per block, and the most it can cost. Type your rule and see what it charges.</p>
+
+  <form class="calc" data-calc="daycare-late-pickup-fee-calculator" novalidate>
+    <fieldset>
+      <legend>Your late fee rule</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-grace">Grace minutes</label>
+          <div class="inbox"><input id="f-grace" name="grace" inputmode="numeric" value="5"><span class="unit">min</span></div>
+          <span class="hint">Late up to this costs nothing</span>
+        </div>
+        <div class="field">
+          <label for="f-from">After the grace time, count from</label>
+          <div class="inbox"><select id="f-from" name="from">
+            <option selected>End of grace time</option>
+            <option>Closing time</option>
+          </select></div>
+          <span class="hint">Closing time = your pick-up time</span>
+        </div>
+        <div class="field">
+          <label for="f-type">Fee is charged</label>
+          <div class="inbox"><select id="f-type" name="type">
+            <option selected>Per minute</option>
+            <option>Per block</option>
+          </select></div>
+          <span class="hint">Each minute, or each block started</span>
+        </div>
+        <div class="field">
+          <label for="f-fee">Fee amount</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-fee" name="fee" inputmode="decimal" value="1"></div>
+          <span class="hint">Per minute, or per block</span>
+        </div>
+        <div class="field">
+          <label for="f-block">Block length</label>
+          <div class="inbox"><input id="f-block" name="block" inputmode="numeric" value="15"><span class="unit">min</span></div>
+          <span class="hint">Only used per block</span>
+        </div>
+        <div class="field">
+          <label for="f-cap">Most one late pick-up costs</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-cap" name="cap" inputmode="decimal" value="40"></div>
+          <span class="hint">0 = no limit</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>One late pick-up</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-minutes">Minutes after your pick-up time</label>
+          <div class="inbox"><input id="f-minutes" name="minutes" inputmode="numeric" value="12"><span class="unit">min</span></div>
+          <span class="hint">5:42 PM on a 5:30 PM pick-up = 12</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Late fee for this pick-up</div>
+      <div class="big"><b data-out="fee" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>5 minutes late</span><b data-out="fee5" data-format="money"></b></li>
+        <li><span>10 minutes late</span><b data-out="fee10" data-format="money"></b></li>
+        <li><span>15 minutes late</span><b data-out="fee15" data-format="money"></b></li>
+        <li><span>30 minutes late</span><b data-out="fee30" data-format="money"></b></li>
+        <li><span>60 minutes late</span><b data-out="fee60" data-format="money"></b></li>
+      </ul>
+      <p class="hint">Your rule in words, for your policy: <b data-out="rule" data-format="text"></b>.</p>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>It counts the minutes after your pick-up time. Up to your grace minutes, there is no fee. Past the grace time, the minutes charged start at the end of the grace time. If you choose "Closing time", every minute after your pick-up time is charged once the grace time has passed.</p>
+    <p>Per minute, each charged minute costs your fee amount. Per block, each block started is charged in full, so 1 minute into a 15-minute block costs the whole block. The fee never goes over your limit. The rule in words is the same sentence the kit puts in its parent notes and policy page.</p>
+    <p>Held at the kit's usual settings and not on the form: brothers and sisters late on the same day are charged once per family, and any single pick-up can be waived. Those change who pays, not the amount the rule works out.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most posts give a going rate, such as $1 a minute (rough, many charge more). Few say where the fee starts counting, which is the part parents argue about.</li>
+      <li>A grace time and a fee "from closing time" can look the same on paper but charge very different amounts. The table shows both ways.</li>
+      <li>Per-block fees jump at each block. Check the 15 and 30 minute lines before you print the policy.</li>
+      <li>A limit keeps one bad evening from becoming a big bill, and makes the rule easier to defend.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page works out one late pick-up. The Home Daycare Sign-In, Attendance &amp; Late Pick-Up Fee Kit is an Excel workbook (.xlsx). Parents sign a printed sheet, you type the times once, and it works out every late fee from the real pick-up time, writes a friendly note to the parent, adds up hours per child per week and bills part-time and drop-in care. Each child can have their own pick-up time.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4620879711">See the Home Daycare Sign-In &amp; Late Pick-Up Fee Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4611056819">the home daycare bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="home-daycare" hidden></section>
+
+  <p class="more">More free calculators: <a href="../home-daycare-rate-calculator/">home daycare rates</a>, <a href="../home-daycare-time-space-percentage/">home daycare time-space percentage</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/daycare-late-pickup-fee-calculator.js"></script>
+</body>
+</html>

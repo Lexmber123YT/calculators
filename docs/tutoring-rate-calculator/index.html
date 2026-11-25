@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Should I Charge for Tutoring? Hourly Rate Calculator | ClearDayTrackers</title>
+<meta name="description" content="Free tutoring rate calculator. See what you really earn per hour once prep, driving, fees and mileage count, and the hourly rate you need to reach your take-home goal.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/tutoring-rate-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #2F6B4F; --accent-soft: #E6F0EA;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Tutoring</p>
+  <h1>How much should I charge for tutoring?</h1>
+  <div class="rule"></div>
+  <p class="lede">Billing $60 an hour is not earning $60 an hour. Prep, driving, messages and fees all come out of it. This shows what one month really pays for every hour you work, and the rate you would need to reach your goal.</p>
+
+  <form class="calc" data-calc="tutoring-rate-calculator" novalidate>
+    <fieldset>
+      <legend>One month of lessons</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-rate">Your rate now</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-rate" name="rate" inputmode="decimal" value="61"></div>
+          <span class="hint">Per lesson hour</span>
+        </div>
+        <div class="field">
+          <label for="f-lessons">Lesson hours</label>
+          <div class="inbox"><input id="f-lessons" name="lessons" inputmode="decimal" value="57"><span class="unit">hrs</span></div>
+          <span class="hint">Time with students in a month</span>
+        </div>
+        <div class="field">
+          <label for="f-fees">Platform fees</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-fees" name="fees" inputmode="decimal" value="100"></div>
+          <span class="hint">Kept by a platform; 0 if families pay you</span>
+        </div>
+        <div class="field">
+          <label for="f-costs">Tutoring costs</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-costs" name="costs" inputmode="decimal" value="371"></div>
+          <span class="hint">Workbooks, software, printing, a room</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Unpaid time and miles</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-prep">Prep hours</label>
+          <div class="inbox"><input id="f-prep" name="prep" inputmode="decimal" value="17"><span class="unit">hrs</span></div>
+          <span class="hint">Planning, grading, worksheets</span>
+        </div>
+        <div class="field">
+          <label for="f-drive">Driving and admin</label>
+          <div class="inbox"><input id="f-drive" name="drive" inputmode="decimal" value="12"><span class="unit">hrs</span></div>
+          <span class="hint">Travel, messages, billing</span>
+        </div>
+        <div class="field">
+          <label for="f-miles">Business miles</label>
+          <div class="inbox"><input id="f-miles" name="miles" inputmode="decimal" value="212"><span class="unit">mi</span></div>
+          <span class="hint">To students' homes and back</span>
+        </div>
+        <div class="field">
+          <label for="f-mrate">Rate per mile</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-mrate" name="mrate" inputmode="decimal" value="0.725"></div>
+          <span class="hint">IRS 2026: 72.5 cents, 76 from Jul 1</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your goal</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-goal">Take-home goal</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-goal" name="goal" inputmode="decimal" value="30"></div>
+          <span class="hint">Per hour worked, before income tax</span>
+        </div>
+        <div class="field">
+          <label for="f-pct">Tax pot</label>
+          <div class="inbox"><input id="f-pct" name="pct" inputmode="decimal" value="25"><span class="unit">%</span></div>
+          <span class="hint">Percent of profit; 25 to 30 is common</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">What you really earn per hour worked</div>
+      <div class="big"><b data-out="real" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>Billed this month</span><b data-out="billed" data-format="money"></b></li>
+        <li><span>Kept after platform fees</span><b data-out="net" data-format="money"></b></li>
+        <li><span>Mileage deduction</span><b data-out="ded" data-format="money"></b></li>
+        <li><span>Profit, before income tax</span><b data-out="profit" data-format="money"></b></li>
+        <li><span>Hours worked, all kinds</span><b data-out="hours" data-format="hours"></b></li>
+        <li><span>Kept per lesson hour now</span><b data-out="kept_lesson" data-format="money"></b></li>
+        <li><span>Kept per lesson hour your goal needs</span><b data-out="need" data-format="money"></b></li>
+        <li><span>Rate to charge for your goal</span><b data-out="charge" data-format="money"></b></li>
+        <li><span>Tax pot to move this month</span><b data-out="pot" data-format="money"></b></li>
+        <li><span>Per hour worked, after the tax pot</span><b data-out="after" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>It adds up one month. What you billed is your rate times your lesson hours. Take off the platform fees and you have what you kept. Take off your tutoring costs and your miles at the mileage rate, and you have profit before income tax. Divide that by every hour you worked: lessons, prep, and driving and admin. That is your real pay per hour.</p>
+    <p>For the goal, it works backward. Your goal times all the hours you work, plus your costs and mileage, is what the month has to bring in. Divide by your lesson hours and you get what you need to keep per lesson hour. The rate to charge adds back your platform fees spread over the lesson hours, so it assumes your fees stay about the same in dollars. If you don't use a platform, the two are the same.</p>
+    <p>The tax pot is your percent of the month's profit, and the last line is what is left per hour after it. This is the kit's Real Hourly Pay math for one month. The kit runs it on your real payments, costs and trips all year.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Most guides quote a rough range, often $25 to $80 an hour. That is what families pay, not what you keep.</li>
+      <li>Goal-based calculators assume every hour is billed. Prep, driving and messages can add a lot of unpaid time to each lesson.</li>
+      <li>Platform fees, workbooks, software and gas come off before you get paid. Few rate guides count them.</li>
+      <li>They rarely show today's real pay first. Knowing that number tells you whether you need a raise or fewer unpaid hours.</li>
+    </ul>
+    <p>Pricing lesson packs instead? The <a href="../tutoring-package-price-calculator/">tutoring package price calculator</a> checks what a discounted pack pays per hour.</p>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page looks at one month. The Tutor Income, Mileage &amp; Tax Set-Aside Kit is an Excel workbook (.xlsx). You log each payment with its platform fee and lesson hours, every cost and every trip at the dated mileage rate. It shows real hourly pay month by month, a tax pot with the four estimated payment periods, and a page for your preparer with income by source. It does not promise any income.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4611787371">See the Tutor Income, Mileage &amp; Tax Set-Aside Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4623344989">the tutor billing and tax bundle</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="tutoring" hidden></section>
+
+  <p class="more">More free calculators: <a href="../tutoring-package-price-calculator/">tutoring package price</a>, <a href="../mileage-deduction-calculator/">2026 mileage deduction</a>, <a href="../self-employed-quarterly-tax-calculator/">self-employed quarterly tax set-aside</a>, or <a href="../">see them all</a>.</p>
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/tutoring-rate-calculator.js"></script>
+</body>
+</html>

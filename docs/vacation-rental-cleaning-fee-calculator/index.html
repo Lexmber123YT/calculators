@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vacation Rental Cleaning Fee Calculator: How Much to Charge | ClearDayTrackers</title>
+<meta name="description" content="Free cleaning fee calculator for vacation and short-term rental hosts. See what you keep after the booking platform's cut, what a turn really costs (cleaner, laundry, supplies) and a suggested fee.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/vacation-rental-cleaning-fee-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body style="--accent: #1D6E68; --accent-soft: #E3F1EF;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Short-term rentals</p>
+  <h1>How much should I charge for a vacation rental cleaning fee?</h1>
+  <div class="rule"></div>
+  <p class="lede">Most hosts copy the fee from the listings next door. But the booking platform often takes its cut from the cleaning fee too, and the cleaner is only part of the turn. This shows what you keep, what a turn really costs, and a fee that covers it.</p>
+
+  <form class="calc" data-calc="vacation-rental-cleaning-fee-calculator" novalidate>
+    <fieldset>
+      <legend>The fee</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-fee">Cleaning fee you charge</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-fee" name="fee" inputmode="decimal" value="175"></div>
+          <span class="hint">Per stay, 0 if none</span>
+        </div>
+        <div class="field">
+          <label for="f-cut">Platform's cut of that fee</label>
+          <div class="inbox"><input id="f-cut" name="cut" inputmode="decimal" value="15.5"><span class="unit">%</span></div>
+          <span class="hint">Often 14 to 16, or about 3 on a split fee</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>One turn</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-pay">Cleaner pay per turn</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-pay" name="pay" inputmode="decimal" value="110"></div>
+          <span class="hint">What you pay for one clean</span>
+        </div>
+        <div class="field">
+          <label for="f-laundry">Laundry per turn</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-laundry" name="laundry" inputmode="decimal" value="16"></div>
+          <span class="hint">Linens and towels, 0 if included</span>
+        </div>
+        <div class="field">
+          <label for="f-supplies">Supplies per turn</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-supplies" name="supplies" inputmode="decimal" value="20"></div>
+          <span class="hint">Paper, pods, soap, toiletries</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Suggested cleaning fee (rounded up to $5)</div>
+      <div class="big"><b data-out="suggested" data-format="money0"></b></div>
+      <ul class="rows">
+        <li><span>Platform's cut of your fee</span><b data-out="cut_amt" data-format="money"></b></li>
+        <li><span>Fee you keep</span><b data-out="kept" data-format="money"></b></li>
+        <li><span>Cleaner pay</span><b data-out="pay" data-format="money"></b></li>
+        <li><span>Laundry and supplies</span><b data-out="laundry_sup" data-format="money"></b></li>
+        <li><span>Turn cost</span><b data-out="cost" data-format="money"></b></li>
+        <li><span>Gap per turn (keep minus cost)</span><b data-out="gap" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>First, what you keep: your cleaning fee minus the booking platform's cut. Then the turn cost: cleaner pay, plus laundry, plus supplies. The gap is what you keep minus the turn cost. A negative gap means every stay pays part of the clean out of your nightly rate.</p>
+    <p>The suggested fee takes cleaner pay plus laundry, adds 10% for the small extras (a re-clean, a stain, a lost key), adds supplies, then grosses it up for the platform's cut so you keep that much. It is rounded up to the next $5. The aim is to cover the turn, not to profit from it.</p>
+    <p>Held out of this page: the extra pay many hosts give a cleaner for a same-day turn. If you pay one, add it to cleaner pay for those turns.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Average fees by home size are old and local. Your own cleaner, laundry and supply costs are the real starting point.</li>
+      <li>On many fee plans the platform's cut comes out of the cleaning fee too. A $175 fee at 15.5% leaves you about $148.</li>
+      <li>Laundry and supplies are part of every turn, not part of "cleaning". Leave them out and a fee that looks fine runs short.</li>
+      <li>Guests see the cleaning fee next to the nightly rate. Check yours against nearby listings too, then decide where the gap goes.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page checks one home and one turn. The Short-Term Rental Turnover, Cleaning &amp; Restock Kit is an Excel workbook (.xlsx). You type each stay once and it finds the turn window, flags same-day and too-tight turns, pays the cleaner, checks every home's cleaning fee month by month, works out supplies per stay from your receipts, and sets restock levels.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4608882441">See the Short-Term Rental Turnover, Cleaning &amp; Restock Kit on Etsy</a>
+    <p class="also">Also: <a href="https://www.etsy.com/listing/4609535318">the Short-Term Rental Host Bundle</a>, with more kits for hosts.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="short-term-rental" hidden></section>
+
+  <p class="more">More free calculators: <a href="../short-term-rental-profit-calculator/">short-term rental profit per night</a>, <a href="../house-cleaning-price-calculator/">house cleaning price</a>, or <a href="../">see them all</a>.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/vacation-rental-cleaning-fee-calculator.js"></script>
+</body>
+</html>

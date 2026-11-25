@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mileage Deduction Calculator 2026: Both IRS Rates, Jan-Jun and Jul-Dec | ClearDayTrackers</title>
+<meta name="description" content="Free 2026 mileage deduction calculator for the self-employed. Miles for each half of the year at its own rate (72.5 and 76 cents), plus what it does to your tax set-aside.">
+<link rel="canonical" href="https://lexmber123yt.github.io/calculators/mileage-deduction-calculator/">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+</head>
+<body data-tax-page style="--accent: #1D6A66; --accent-soft: #E4F1EF;">
+<header class="top"><div class="wrap">
+  <a class="brand" href="../">ClearDay<span>Trackers</span></a>
+  <nav><a href="../">All free calculators</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="../">Free calculators</a> &rsaquo; Mileage</p>
+  <h1>Mileage deduction calculator for 2026</h1>
+  <div class="rule"></div>
+  <p class="lede">The business mileage rate changed in the middle of 2026, so one rate times all your miles is wrong. This counts each half of the year at its own rate, then shows what the miles do to the money you set aside for tax.</p>
+
+  <form class="calc" data-calc="mileage-deduction-calculator" novalidate>
+    <fieldset>
+      <legend>January 1 to June 30</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-miles1">Business miles</label>
+          <div class="inbox"><input id="f-miles1" name="miles1" inputmode="decimal" value="2922"><span class="unit">mi</span></div>
+          <span class="hint">Business trips only, not your commute</span>
+        </div>
+        <div class="field">
+          <label for="f-rate1">Rate per mile</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-rate1" name="rate1" inputmode="decimal" value="0.725"></div>
+          <span class="hint">IRS rate: 72.5 cents. Check irs.gov for your year</span>
+        </div>
+        <div class="field">
+          <label for="f-profit1">Profit before miles</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-profit1" name="profit1" inputmode="decimal" value="28617"></div>
+          <span class="hint">Income minus other business costs</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>July 1 to December 31</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-miles2">Business miles</label>
+          <div class="inbox"><input id="f-miles2" name="miles2" inputmode="decimal" value="1788"><span class="unit">mi</span></div>
+          <span class="hint">0 if you haven't driven yet</span>
+        </div>
+        <div class="field">
+          <label for="f-rate2">Rate per mile</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-rate2" name="rate2" inputmode="decimal" value="0.76"></div>
+          <span class="hint">IRS rate from July 1: 76 cents</span>
+        </div>
+        <div class="field">
+          <label for="f-profit2">Profit before miles</label>
+          <div class="inbox"><span class="unit">$</span><input id="f-profit2" name="profit2" inputmode="decimal" value="23246"></div>
+          <span class="hint">0 if this half hasn't started</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your set-aside</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="f-pct">Tax set-aside</label>
+          <div class="inbox"><input id="f-pct" name="pct" inputmode="decimal" value="28"><span class="unit">%</span></div>
+          <span class="hint">25 to 30 is a common rule of thumb</span>
+        </div>
+      </div>
+    </fieldset>
+    <div class="btnrow"><button class="go" type="submit">Work it out</button></div>
+    <div class="calc-msg" role="alert"></div>
+    <div class="results" aria-live="polite">
+      <div class="big-label">Mileage deduction for the year</div>
+      <div class="big"><b data-out="ded" data-format="money"></b></div>
+      <ul class="rows">
+        <li><span>Jan to Jun deduction</span><b data-out="ded1" data-format="money"></b></li>
+        <li><span>Jul to Dec deduction</span><b data-out="ded2" data-format="money"></b></li>
+        <li><span>Business miles in all</span><b data-out="miles" data-format="num1"></b></li>
+        <li><span>Average per mile</span><b data-out="per_mile" data-format="money"></b></li>
+        <li><span>Profit after miles</span><b data-out="after" data-format="money"></b></li>
+        <li><span>Set aside, Jan to Jun</span><b data-out="set1" data-format="money"></b></li>
+        <li><span>Set aside, Jul to Dec</span><b data-out="set2" data-format="money"></b></li>
+        <li><span>Suggested set-aside for the year</span><b data-out="setaside" data-format="money"></b></li>
+        <li><span>Set-aside the miles take off</span><b data-out="saved" data-format="money"></b></li>
+      </ul>
+      <div class="flags"></div>
+    </div>
+  </form>
+
+  <section class="prose">
+    <h2>How this works</h2>
+    <p>Each half of the year gets its own rate. Miles from January 1 to June 30 are counted at the first rate, and miles from July 1 on at the second. The boxes start at the IRS business rates for 2026: 72.5 cents a mile for the first half and 76 cents from July 1. You can type over them. Rates change, so check irs.gov for your year.</p>
+    <p>Then it takes the deduction off your profit for that half, and sets aside your percent of what is left. A half with a loss sets aside $0 and does not lower the other half. The last line is how much less the set-aside comes to because you logged the miles.</p>
+    <p>This is the kit's own math. The kit does it trip by trip and month by month, so each trip uses the rate in force on its date. This page lumps each half of the year together. That is close, but the kit is the record.</p>
+    <h2>What the usual free answers miss</h2>
+    <ul>
+      <li>Many calculators use one rate for the whole year. In 2026 that is wrong for every mile on one side of July 1.</li>
+      <li>Only business miles count. Your normal commute and personal stops do not, and a dated log is what backs the number up.</li>
+      <li>The deduction is not cash back. It lowers the profit you owe tax on, so the real effect is roughly your set-aside percent of it.</li>
+      <li>Most stop at the deduction. Few show what it does to the money you move to savings for tax.</li>
+    </ul>
+  </section>
+
+  <aside class="kit">
+    <h2>Want the full kit?</h2>
+    <p>This page works on two totals. The Cleaning Business Mileage, Supplies &amp; Tax Set-Aside Kit is an Excel workbook (.xlsx). You log each trip by date, or by odometer readings, and every trip uses the rate in force that day from a small rate table you control. It also tracks supplies per clean, a monthly set-aside with the four estimated payment periods, and a year-end page for your preparer.</p>
+    <a class="cta" href="https://www.etsy.com/listing/4611032389">See the Cleaning Business Mileage &amp; Tax Set-Aside Kit on Etsy</a>
+    <p class="also">Same mileage log for your trade: <a href="https://www.etsy.com/listing/4611724759">contractors</a>, <a href="https://www.etsy.com/listing/4615744849">pet sitters and dog walkers</a>, <a href="https://www.etsy.com/listing/4611787371">tutors</a>, <a href="https://www.etsy.com/listing/4612307878">personal trainers</a>, <a href="https://www.etsy.com/listing/4611074059">booth renters</a>.</p>
+  </aside>
+  <!-- AMAZON-AFFILIATE-SLOT (empty on purpose). William has not joined Amazon Associates yet; see vault "01 Projects/Amazon Affiliate/PLAN.md". When approved: add 3-5 tools for this trade here, show the line "As an Amazon Associate I earn from qualifying purchases." above them, and remove the hidden attribute. No affiliate links until then. -->
+  <section class="tools-slot" data-affiliate-slot="general" hidden></section>
+
+  <p class="more">More free calculators: <a href="../self-employed-quarterly-tax-calculator/">self-employed quarterly tax set-aside</a>, <a href="../house-cleaning-price-calculator/">house cleaning price</a>, <a href="../handyman-job-price-calculator/">handyman job price</a>, or <a href="../">see them all</a>.</p>
+  <p class="taxline">General bookkeeping help, not tax or legal advice. Rules differ by state and year; check with a tax preparer.</p>
+  <p class="note">The numbers in the boxes are an example; type your own. Nothing you type leaves this page.</p>
+</main>
+
+<footer><div class="wrap">
+  Free calculators from <a href="../">ClearDayTrackers</a>. Rough guides for small-business owners, not advice for your situation.
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/calcs/mileage-deduction-calculator.js"></script>
+</body>
+</html>
